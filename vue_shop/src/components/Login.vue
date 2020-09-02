@@ -6,9 +6,9 @@
         <img src="../assets/logo.png" alt="">
       </div>
       <!-- 登录表单区域 -->
-      <el-form v-model="loginForm" label-width="0px" class="login_form">
+      <el-form :rules="loginFormRules" :model="loginForm" label-width="0px" class="login_form">
         <!-- 用户名 -->
-        <el-form-item>
+        <el-form-item prop="username">
           <el-input v-model="loginForm.username" prefix-icon="el-icon-search"></el-input>
         </el-form-item>
         <!-- 密码 -->
@@ -31,8 +31,18 @@ export default {
     return {
       // 这是登录表单的数据绑定对象
       loginForm: {
-        username: '郑杰',
-        password: '123456'
+        username: '',
+        password: ''
+      },
+      // 这是表单的验证规则对象
+      loginFormRules: {
+        // 验证用户名是否合法
+        username: [
+          { required: true, message: '请输入登录名称', trigger: 'blur' },
+          { min: 3, max: 10, message: '长度在3 ~ 10个字符之间', trigger: 'blur' }
+        ],
+        // 验证密码是否合法
+        password: []
       }
     }
   }
