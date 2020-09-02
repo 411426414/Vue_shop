@@ -56,11 +56,13 @@ export default {
     },
     login () {
       this.$refs.loginFormRef.validate(async valid => {
+        // 如果valid为true发起请求，否则阻止请求
         if (!valid) return
         // const result = await this.$http.post('login', this.loginForm)
         // { data: res }：从result解构复制出一个data属性，重命名为res
         const { data: res } = await this.$http.post('login', this.loginForm)
-        console.log(res)
+        if (res.meta.status !== 200) return console.log('登录失败')
+        console.log('登录成功')
       })
     }
   }
