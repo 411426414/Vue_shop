@@ -56,7 +56,9 @@ export default {
     },
     login () {
       this.$refs.loginFormRef.validate(valid => {
-        console.log(valid)
+        // console.log(valid)
+        if (!valid) return
+        this.$http.post('login', this.loginForm)
       })
     }
   }
