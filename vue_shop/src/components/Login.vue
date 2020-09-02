@@ -31,8 +31,8 @@ export default {
     return {
       // 这是登录表单的数据绑定对象
       loginForm: {
-        username: '',
-        password: ''
+        username: 'admin',
+        password: '123456'
       },
       // 这是表单的验证规则对象
       loginFormRules: {
@@ -55,10 +55,12 @@ export default {
       this.$refs.loginFormRef.resetFields()
     },
     login () {
-      this.$refs.loginFormRef.validate(valid => {
-        // console.log(valid)
+      this.$refs.loginFormRef.validate(async valid => {
         if (!valid) return
-        this.$http.post('login', this.loginForm)
+        // const result = await this.$http.post('login', this.loginForm)
+        // { data: res }：从result解构复制出一个data属性，重命名为res
+        const { data: res } = await this.$http.post('login', this.loginForm)
+        console.log(res)
       })
     }
   }
