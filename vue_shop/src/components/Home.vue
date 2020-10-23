@@ -48,6 +48,19 @@
 
 <script>
 export default {
+  data() {
+    return {
+      // 左侧菜单数据
+      menuList: [],
+      iconsObj: {
+        '125': 'iconfont icon-user',
+        '103': 'iconfont icon-tijikongjian',
+        '101': 'iconfont icon-shangpin',
+        '102': 'iconfont icon-danju',
+        '145': 'iconfont icon-baobiao'
+      }
+    }
+  },
   methods: {
     logout() {
       window.sessionStorage.clear()// 清空token
