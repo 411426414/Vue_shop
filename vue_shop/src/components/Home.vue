@@ -58,7 +58,9 @@ export default {
         '101': 'iconfont icon-shangpin',
         '102': 'iconfont icon-danju',
         '145': 'iconfont icon-baobiao'
-      }
+      },
+      // 是否折叠
+      isCollapse: false
     }
   },
   methods: {
