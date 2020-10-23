@@ -85,6 +85,11 @@ export default {
     // 点击按钮的切换和展开
     toggleCollapse () {
       this.isCollapse = !this.isCollapse
+    },
+    // 保存链接的激活状态
+    saveNavState(activePath) {
+      window.sessionStorage.setItem('activePath', activePath)
+      this.activePath = activePath
     }
   }
 }
