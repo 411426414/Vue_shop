@@ -73,6 +73,14 @@ export default {
     logout() {
       window.sessionStorage.clear()// 清空token
       this.$router.push('/login') // 跳转到登录页面
+    },
+    // 获取所有的菜单
+    async getMenuList() {
+      const { data: res } = await this.$http.get('menus')
+      if (res.meta.status !== 200) return this.$message.error(res.meta.msg)
+      this.menuList = res.data
+      console.log(res)
+      console.log(this.menuList)
     }
   }
 }
