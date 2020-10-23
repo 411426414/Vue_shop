@@ -81,6 +81,10 @@ export default {
       this.menuList = res.data
       console.log(res)
       console.log(this.menuList)
+    },
+    // 点击按钮的切换和展开
+    toggleCollapse () {
+      this.isCollapse = !this.isCollapse
     }
   }
 }
