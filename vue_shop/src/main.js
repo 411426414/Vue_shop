@@ -5,6 +5,7 @@ import App from './App.vue'
 import './assets/css/global.css'
 // 导入字体图标
 import './assets/fonts/iconfont.css'
+import './plugins/element.js'
 import router from './router'
 
 // 配置请求的根路径
