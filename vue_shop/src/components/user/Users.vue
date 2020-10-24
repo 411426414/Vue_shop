@@ -6,6 +6,13 @@
       <el-breadcrumb-item>用户管理</el-breadcrumb-item>
       <el-breadcrumb-item>用户列表</el-breadcrumb-item>
     </el-breadcrumb>
+    <!-- 卡片视图区域 -->
+    <el-card class="box-card">
+      <!-- 搜索与添加区域 -->
+      <el-input placeholder="请输入内容">
+        <el-button slot="append" icon="el-icon-search"></el-button>
+      </el-input>
+    </el-card>
   </div>
 </template>
 
