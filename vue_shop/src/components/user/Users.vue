@@ -21,6 +21,10 @@
           <el-button type="primary">添加用户</el-button>
         </el-col>
       </el-row>
+      <!-- 用户列表区域 -->
+      <el-table>
+        <el-table-column></el-table-column>
+      </el-table>
     </el-card>
   </div>
 </template>
