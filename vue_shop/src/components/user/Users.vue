@@ -22,8 +22,8 @@
         </el-col>
       </el-row>
       <!-- 用户列表区域 -->
-      <el-table>
-        <el-table-column></el-table-column>
+      <el-table :data="userlist">
+        <el-table-column label="姓名" prop="username"></el-table-column>
       </el-table>
     </el-card>
   </div>
@@ -56,7 +56,6 @@ export default {
       }
       this.userlist = res.data.userlist
       this.total = res.data.total
-      console.log(res)
     }
   }
 }
