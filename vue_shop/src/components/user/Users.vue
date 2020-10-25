@@ -15,6 +15,9 @@
             <el-button slot="append" icon="el-icon-search"></el-button>
           </el-input>
         </el-col>
+        <el-col :span="4">
+          <el-button type="primary">添加用户</el-button>
+        </el-col>
       </el-row>
     </el-card>
   </div>
