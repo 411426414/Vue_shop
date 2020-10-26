@@ -30,11 +30,23 @@
         <el-table-column label="角色" prop="role_name"></el-table-column>
         <el-table-column label="状态" prop="mg_state">
           <template slot-scope="scope">
-            {{scope.row}}
+            <!-- {{scope.row}} -->
             <el-switch v-model="scope.row.mg_state"></el-switch>
           </template>
         </el-table-column>
-        <el-table-column label="操作"></el-table-column>
+        <!-- 使用template定义作用域插槽，通过slot-scope接受了当前作用域的数据 -->
+        <el-table-column label="操作" width='180px'>
+          <template slot-scope=""> <!-- scope -->
+            <!-- 修改按钮 -->
+            <el-button type='primary' size='mini' icon='el-icon-edit'></el-button>
+            <!-- 删除按钮 -->
+            <el-button type='danger' size='mini' icon='el-icon-delete'></el-button>
+            <!-- 分配角色 -->
+            <el-tooltip effect="dark" content="分配角色" placement="top" :enterable='false'>
+              <el-button type='warning' size='mini' icon='el-icon-setting'></el-button>
+            </el-tooltip>
+          </template>
+        </el-table-column>
       </el-table>
     </el-card>
   </div>
