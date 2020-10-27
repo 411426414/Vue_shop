@@ -106,8 +106,14 @@ export default {
       this.getUserList()
     },
     // 监听 switch 开关状态的改变
-    userStateChange(userInfo) {
+    async userStateChange(userInfo) {
       console.log(userInfo)
+      const { data: res } = await this.$http.put(`users/${userInfo.id}/state/${userInfo.mg_state}`)
+      if (res.meta.status !== 200) {
+        userInfo.mg_state = !userInfo.mg_state
+        return this.$message.error('更新用户状态失败!')
+      }
+      this.$message.success('更新用户状态成功')
     }
   }
 }
