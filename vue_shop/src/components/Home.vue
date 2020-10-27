@@ -60,7 +60,7 @@ export default {
         145: 'iconfont icon-baobiao'
       },
       // 是否折叠
-      isCollapse: false,
+      isCollapse: true,
       // 被激活的链接地址
       activePath: ''
     }
