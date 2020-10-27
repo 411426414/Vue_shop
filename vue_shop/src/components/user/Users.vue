@@ -13,7 +13,7 @@
         <!-- gutter 间隔 -->
         <el-col :span="8"
           ><!-- span 列的宽度 -->
-          <el-input placeholder="请输入内容" v-model="queryInfo.query">
+          <el-input placeholder="请输入内容" v-model="queryInfo.query" clearable @clear="getUserList">
             <el-button slot="append" icon="el-icon-search" @click="getUserList"></el-button>
           </el-input>
         </el-col>
@@ -53,7 +53,7 @@
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
         :current-page="queryInfo.pagenum"
-        :page-sizes="[3, 6, 10, 15]"
+        :page-sizes="[2, 4, 6, 8]"
         :page-size="queryInfo.pagesize"
         layout="total, sizes, prev, pager, next, jumper"
         :total="total">
@@ -72,7 +72,7 @@ export default {
         // 当前的页数
         pagenum: 1,
         // 当前每页显示多少条数据
-        pagesize: 2
+        pagesize: 4
       },
       userlist: [],
       total: 0
