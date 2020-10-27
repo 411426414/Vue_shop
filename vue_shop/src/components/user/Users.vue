@@ -132,19 +132,19 @@ export default {
       // 添加表单的验证规则对象
       addFormRules: {
         username: [
-          { required: true, message: '请输入用户名', trigger: 'blur' },
-          { min: 3, max: 10, message: '用户名的长度在 3 到 10 个字符', trigger: 'blur' }
+          { required: true, message: '请输入用户名', trigger: ['blur', 'change'] },
+          { min: 3, max: 10, message: '用户名的长度在 3 到 10 个字符' }
         ],
         password: [
-          { required: true, message: '请输入密码', trigger: 'blur' },
-          { min: 3, max: 15, message: '密码的长度在 3 到 15 个字符', trigger: 'blur' }
+          { required: true, message: '请输入密码', trigger: ['blur', 'change'] },
+          { min: 3, max: 15, message: '密码的长度在 3 到 15 个字符' }
         ],
         email: [
-          { required: true, message: '请输入邮箱', trigger: 'blur' },
+          { required: true, message: '请输入邮箱', trigger: ['blur', 'change'] },
           { validator: checkEmail, type: 'email', message: '请输入正确的邮箱地址', trigger: ['blur', 'change'] }
         ],
         mobile: [
-          { required: true, message: '请输入手机号', trigger: 'blur' },
+          { required: true, message: '请输入手机号', trigger: ['blur', 'change'] },
           { validator: checkMobile }
         ]
       }
