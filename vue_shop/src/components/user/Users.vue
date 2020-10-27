@@ -99,6 +99,16 @@ export default {
       }
       cb(new Error('请输入合法的邮箱'))
     }
+    // 验证手机号规则
+    var checkMobile = (rule, value, cb) => {
+      // 验证手机号的正则表达式
+      const regMobile = /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/
+      if (regMobile.test(value)) {
+        // 合法手机号
+        return cb()
+      }
+      cb(new Error('请输入合法的手机号'))
+    }
     return {
       // 获取用户列表的参数对象
       queryInfo: {
@@ -132,6 +142,10 @@ export default {
         email: [
           { required: true, message: '请输入邮箱', trigger: 'blur' },
           { validator: checkEmail, type: 'email', message: '请输入正确的邮箱地址', trigger: ['blur', 'change'] }
+        ],
+        mobile: [
+          { required: true, message: '请输入手机号', trigger: 'blur' },
+          { validator: checkMobile }
         ]
       }
     }
