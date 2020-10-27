@@ -89,6 +89,16 @@
 <script>
 export default {
   data() {
+    // 验证邮箱规则
+    var checkEmail = (rule, value, cb) => {
+      // 验证邮箱的正则表达式
+      const regEmail = /^([a-zA-Z0-9])+@([a-zA-Z0-9_-])+(\.([a-zA-Z0-9_-])+)/
+      if (regEmail.test(value)) {
+        // 合法邮箱
+        return cb()
+      }
+      cb(new Error('请输入合法的邮箱'))
+    }
     return {
       // 获取用户列表的参数对象
       queryInfo: {
@@ -120,10 +130,8 @@ export default {
           { min: 3, max: 15, message: '密码的长度在 3 到 15 个字符', trigger: 'blur' }
         ],
         email: [
-          { required: true, message: '请输入邮箱', trigger: 'blur' }
-        ],
-        mobile: [
-          { required: true, message: '请输入手机', trigger: 'blur' }
+          { required: true, message: '请输入邮箱', trigger: 'blur' },
+          { validator: checkEmail, type: 'email', message: '请输入正确的邮箱地址', trigger: ['blur', 'change'] }
         ]
       }
     }
