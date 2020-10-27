@@ -31,7 +31,7 @@
         <el-table-column label="状态" prop="mg_state">
           <template slot-scope="scope">
             <!-- {{scope.row}} -->
-            <el-switch v-model="scope.row.mg_state"></el-switch>
+            <el-switch v-model="scope.row.mg_state" @change="userStateChange(scope.row)"></el-switch>
           </template>
         </el-table-column>
         <!-- 使用template定义作用域插槽，通过slot-scope接受了当前作用域的数据 -->
@@ -104,6 +104,10 @@ export default {
       console.log(newPage)
       this.queryInfo.pagenum = newPage
       this.getUserList()
+    },
+    // 监听 switch 开关状态的改变
+    userStateChange(userInfo) {
+      console.log(userInfo)
     }
   }
 }
