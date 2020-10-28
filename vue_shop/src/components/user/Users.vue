@@ -85,7 +85,17 @@
     </el-dialog>
     <!-- 修改用户对话框 -->
     <el-dialog title="修改用户" :visible.sync="editDialogVisible" width="50%">
-      <span>这是一段信息</span>
+      <el-form :model="editForm" :rules="editFormRules" ref="editFormRef" label-width="70px">
+        <el-form-item label="用户名">
+          <el-input v-model="editForm.username" disabled></el-input>
+        </el-form-item>
+        <el-form-item label="邮箱" prop="email">
+          <el-input v-model="editForm.email"></el-input>
+        </el-form-item>
+        <el-form-item label="手机" prop="mobile">
+          <el-input v-model="editForm.mobile"></el-input>
+        </el-form-item>
+      </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="editDialogVisible = false">取 消</el-button>
         <el-button type="primary" @click="editDialogVisible = false">确 定</el-button>
@@ -159,6 +169,17 @@ export default {
           { required: true, message: '请输入手机号', trigger: ['blur', 'change'] },
           { validator: checkMobile }
         ]
+      },
+      // 修改表单的验证规则对象
+      editFormRules: {
+        email: [
+          { required: true, message: '请输入邮箱', trigger: ['blur', 'change'] },
+          { validator: checkEmail, type: 'email', message: '请输入正确的邮箱地址', trigger: ['blur', 'change'] }
+        ],
+        mobile: [
+          { required: true, message: '请输入手机号', trigger: 'blur' },
+          { validator: checkMobile, trigger: ['blur', 'change'] }
+        ]
       }
     }
   },
@@ -227,7 +248,7 @@ export default {
       }
       this.editForm = res.data
       this.editDialogVisible = true
-      console.log(this.editForm)
+      // console.log(this.editForm)
     }
   }
 }
