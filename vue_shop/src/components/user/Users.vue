@@ -258,6 +258,7 @@ export default {
     editUserInfo() {
       this.$refs.editFormRef.validate(valid => {
         if (valid) return
+        console.log(valid);
         // 可以发起修改用户的网络请求
       })
     }
