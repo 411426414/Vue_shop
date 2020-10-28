@@ -36,9 +36,9 @@
         </el-table-column>
         <!-- 使用template定义作用域插槽，通过slot-scope接受了当前作用域的数据 -->
         <el-table-column label="操作" width='180px'>
-          <template slot-scope=""> <!-- scope -->
+          <template slot-scope="scope"> <!-- scope -->
             <!-- 修改按钮 -->
-            <el-button @click="showEditDialog()" type='primary' size='mini' icon='el-icon-edit'></el-button>
+            <el-button @click="showEditDialog(scope.row.id)" type='primary' size='mini' icon='el-icon-edit'></el-button>
             <!-- 删除按钮 -->
             <el-button type='danger' size='mini' icon='el-icon-delete'></el-button>
             <!-- 分配角色 -->
@@ -139,6 +139,8 @@ export default {
         email: '',
         mobile: ''
       },
+      // 查询到的用户的表单数据对象
+      editForm: {},
       // 添加表单的验证规则对象
       addFormRules: {
         username: [
@@ -173,7 +175,7 @@ export default {
       }
       this.userlist = res.data.users
       this.total = res.data.total
-      console.log(res)
+      // console.log(res)
     },
     // 监听 pagesize 改变的事件
     handleSizeChange(newSize) {
@@ -218,8 +220,14 @@ export default {
       })
     },
     // 编辑用户的对话框
-    showEditDialog() {
+    async showEditDialog(id) {
+      const { data: res } = await this.$http.get('users/' + id)
+      if (res.meta.status !== 200) {
+        return this.$message.error('查询用户信息失败！')
+      }
+      this.editForm = res.data
       this.editDialogVisible = true
+      console.log(this.editForm)
     }
   }
 }
