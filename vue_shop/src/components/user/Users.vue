@@ -38,7 +38,7 @@
         <el-table-column label="操作" width='180px'>
           <template slot-scope=""> <!-- scope -->
             <!-- 修改按钮 -->
-            <el-button type='primary' size='mini' icon='el-icon-edit'></el-button>
+            <el-button @click="showEditDialog()" type='primary' size='mini' icon='el-icon-edit'></el-button>
             <!-- 删除按钮 -->
             <el-button type='danger' size='mini' icon='el-icon-delete'></el-button>
             <!-- 分配角色 -->
@@ -83,6 +83,14 @@
         <el-button type="primary" @click="addUser">确 定</el-button>
       </span>
     </el-dialog>
+    <!-- 修改用户对话框 -->
+    <el-dialog title="修改用户" :visible.sync="editDialogVisible" width="50%">
+      <span>这是一段信息</span>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="editDialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="editDialogVisible = false">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -122,6 +130,8 @@ export default {
       total: 0,
       // 控制添加用户对话框的显示与隐藏
       addDialogVisible: false,
+      // 控制修改用户对话框的显示与隐藏
+      editDialogVisible: false,
       // 添加用户的表单数据对象
       addForm: {
         username: '',
@@ -206,6 +216,10 @@ export default {
         // 重新获取用户列表数据
         this.getUserList()
       })
+    },
+    // 编辑用户的对话框
+    showEditDialog() {
+      this.editDialogVisible = true
     }
   }
 }
