@@ -133,7 +133,7 @@ export default {
       addFormRules: {
         username: [
           { required: true, message: '请输入用户名', trigger: ['blur', 'change'] },
-          { min: 3, max: 10, message: '用户名的长度在 3 到 10 个字符' }
+          { min: 2, max: 10, message: '用户名的长度在 2 到 10 个字符' }
         ],
         password: [
           { required: true, message: '请输入密码', trigger: ['blur', 'change'] },
@@ -193,9 +193,18 @@ export default {
     },
     // 点击按钮添加新用户
     addUser() {
-      this.$refs.addFormRef.validate(valid => {
-        if(valid) return
+      this.$refs.addFormRef.validate(async valid => {
+        if (!valid) return
         // 可以发起添加用户的网络请求
+        const { data: res } = await this.$http.post('users', this.addForm)
+        if (res.meta.status !== 201) {
+          this.$message.error('添加用户失败！')
+        }
+        this.$message.success('添加用户成功！')
+        // 隐藏添加用户的对话框
+        this.addDialogVisible = false
+        // 重新获取用户列表数据
+        this.getUserList()
       })
     }
   }
