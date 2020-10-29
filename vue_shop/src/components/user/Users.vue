@@ -299,6 +299,7 @@ export default {
         return this.$message.error('删除用户失败')
       }
       this.$message.error('删除用户成功')
+      this.getUserList()
     }
   }
 }
