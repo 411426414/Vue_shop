@@ -269,6 +269,8 @@ export default {
         }
         // 关闭对话框
         this.editDialogVisible = false
+        // 刷新数据列表
+        this.getUserList()
       })
     }
   }
