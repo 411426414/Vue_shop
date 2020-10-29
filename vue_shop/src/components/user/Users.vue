@@ -271,6 +271,8 @@ export default {
         this.editDialogVisible = false
         // 刷新数据列表
         this.getUserList()
+        // 提示修改成功
+      this.$message.success('更新用户数据成功')
       })
     }
   }
