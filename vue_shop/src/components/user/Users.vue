@@ -98,7 +98,7 @@
       </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="editDialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="editUserInfo">确 定</el-button>
+        <el-button @click="editUserInfo" type="primary">确 定</el-button>
       </span>
     </el-dialog>
   </div>
@@ -260,8 +260,8 @@ export default {
         if (valid) return
         // console.log(valid)
         // 可以发起修改用户的网络请求
-        const { data: res} = await this.$http.put('users/' + this.editForm.id, {
-          email: this.editForm.email, 
+        const { data: res } = await this.$http.put('users/' + this.editForm.id, {
+          email: this.editForm.email,
           mobile: this.editForm.mobile
         })
         if (res.meta.status !== 200) {
@@ -272,7 +272,7 @@ export default {
         // 刷新数据列表
         this.getUserList()
         // 提示修改成功
-      this.$message.success('更新用户数据成功')
+        this.$message.success('更新用户数据成功')
       })
     }
   }
