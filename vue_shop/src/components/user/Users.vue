@@ -288,7 +288,13 @@ export default {
           center: true
         }
       ).catch(err => err)
-      
+      // 如果用户确认删除，则返回值为字符串 confirm
+      // 如果用户取消删除，则返回值为字符串 cancel
+      // console.log(confirmResult)
+      if (confirmResult !== 'confirm') {
+        return this.$message.info('已取消删除')
+      }
+      console.log('确认删除')
     }
   }
 }
