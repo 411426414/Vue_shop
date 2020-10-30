@@ -35,7 +35,7 @@
                   </el-col>
                   <!-- 通过for循环嵌套渲染三级权限 -->
                   <el-col :span='18'>
-                    <el-tag type='warning' v-for="(item3) in item2.children" :key='item3.id'>{{ item3.authName }}</el-tag>
+                    <el-tag type='warning' v-for="(item3) in item2.children" :key='item3.id' closable @close='removeRightById(scope.row, item3.id)'>{{ item3.authName }}</el-tag>
                   </el-col>
                 </el-row>
               </el-col>
@@ -77,6 +77,23 @@ export default {
       }
       this.rolesList = res.data
       console.log(this.rolesList)
+    },
+    // 根据ID删除对应的权限
+    async removeRightById(role, rightId) {
+      const confirmResult = await this.$confirm(
+        '此操作将永久删除该用户权限, 是否继续?',
+        '提示',
+        {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning',
+          center: true
+        }
+      ).catch(err => err)
+      if (confirmResult !== 'confirm') {
+        return this.$message.info('已取消删除')
+      }
+      this.$message.error('删除权限成功')
     }
   }
 }
