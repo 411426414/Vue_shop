@@ -22,7 +22,7 @@
             <el-row :class="['vcenter', 'bdbottom', i1 === 0 ? 'bdtop' : '']" v-for="(item1, i1) in scope.row.children" :key="item1.id">
               <!-- 渲染一级权限-->
               <el-col :span='5'>
-                <el-tag>{{ item1.authName }}</el-tag>
+                <el-tag closable @close='removeRightById(scope.row, item1.id)'>{{ item1.authName }}</el-tag>
                 <i class="el-icon-caret-right"></i>
               </el-col>
               <!-- 渲染二级权限-->
@@ -30,7 +30,7 @@
                 <!-- 通过for循环嵌套渲染二级权限 -->
                 <el-row :class="['vcenter', i2 === 0 ? '' : 'bdtop']" v-for="(item2, i2) in item1.children" :key='item2.id'>
                   <el-col :span='6'>
-                    <el-tag type="success">{{ item2.authName }}</el-tag>
+                    <el-tag type="success" closable @close='removeRightById(scope.row, item2.id)'>{{ item2.authName }}</el-tag>
                     <i class="el-icon-caret-right"></i>
                   </el-col>
                   <!-- 通过for循环嵌套渲染三级权限 -->
@@ -93,7 +93,7 @@ export default {
       if (confirmResult !== 'confirm') {
         return this.$message.info('已取消删除')
       }
-      const { data: res } = await this.$http.delete(`roles/${role.id}/right/${rightId}`)
+      const { data: res } = await this.$http.delete(`roles/${role.id}/rights/${rightId}`)
       if (res.meta.status !== 200) {
         return this.$message.error('删除权限失败')
       }
