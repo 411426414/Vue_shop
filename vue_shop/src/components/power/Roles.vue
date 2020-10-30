@@ -23,6 +23,7 @@
               <!-- 渲染一级权限-->
               <el-col :span='5'>
                 <el-tag>{{ item1.authName }}</el-tag>
+                <i class="el-icon-caret-right"></i>
               </el-col>
               <!-- 渲染二级权限-->
               <el-col :span='19'></el-col>
