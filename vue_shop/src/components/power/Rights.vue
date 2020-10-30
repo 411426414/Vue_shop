@@ -8,6 +8,12 @@
     </el-breadcrumb>
     <!-- 卡片视图区域 -->
     <el-card>
+        <el-table :data="rightsList" border stripe>
+          <el-table-column label="#" type="index"></el-table-column>
+          <el-table-column label="路径" prop="authName"></el-table-column>
+          <el-table-column label="权限等级" prop="level">
+          </el-table-column>
+        </el-table>
     </el-card>
   </div>
 </template>
