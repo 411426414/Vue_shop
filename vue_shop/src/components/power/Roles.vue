@@ -19,7 +19,25 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      // 所有角色列表数据
+      rolesList: []
+    }
+  },
+  methods: {
+    // 获取所有角色列表
+    async getRolesList() {
+      const { data: res } = await this.$http.get('roles')
+      if (res.meta.status !== 200) {
+        return this.$message.error('获取角色列表失败')
+      }
+      this.rolesList = res.data
+      console.log(this.rolesList)
+    }
+  }
+}
 </script>
 
 <style lang="less" scope>
