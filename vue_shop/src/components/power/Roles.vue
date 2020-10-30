@@ -93,12 +93,13 @@ export default {
       if (confirmResult !== 'confirm') {
         return this.$message.info('已取消删除')
       }
-      const { data: res } = await this.$http.delete(`roles/${role.id}/right/${rightId.id}`)
+      const { data: res } = await this.$http.delete(`roles/${role.id}/right/${rightId}`)
       if (res.meta.status !== 200) {
         return this.$message.error('删除权限失败')
       }
       this.$message.error('删除权限成功')
-      this.getRolesList()
+      // this.getRolesList()
+      role.children = res.data
     }
   }
 }
