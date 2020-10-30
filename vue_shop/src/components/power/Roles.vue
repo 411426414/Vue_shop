@@ -26,6 +26,9 @@ export default {
       rolesList: []
     }
   },
+  created() {
+    this.getRolesList()
+  },
   methods: {
     // 获取所有角色列表
     async getRolesList() {
