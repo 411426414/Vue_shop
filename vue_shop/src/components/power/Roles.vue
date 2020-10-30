@@ -16,6 +16,8 @@
       </el-row>
       <!-- 角色列表区域 -->
       <el-table :data="rolesList" border stripe>
+        <!-- 展开列 -->
+        <el-table-column type='expand'></el-table-column>
         <el-table-column label="#" type="index"></el-table-column>
         <el-table-column label="角色名称" prop="roleName"></el-table-column>
         <el-table-column label="角色描述" prop="roleDesc"></el-table-column>
