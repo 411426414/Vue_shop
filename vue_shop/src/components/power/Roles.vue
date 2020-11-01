@@ -88,6 +88,7 @@ export default {
     }
   },
   created() {
+    // 创建时获取所有角色列表
     this.getRolesList()
   },
   methods: {
