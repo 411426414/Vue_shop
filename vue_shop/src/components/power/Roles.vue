@@ -49,11 +49,18 @@
           <template><!--  slot-scope="scope" -->
             <el-button type='primary' icon='el-icon-edit' size='mini'>编辑</el-button>
             <el-button type='danger' icon='el-icon-delect' size='mini'>删除</el-button>
-            <el-button type='warning' icon='el-icon-setting' size='mini'>分配权限</el-button>
+            <el-button type='warning' icon='el-icon-setting' size='mini' @click="showSetRightDialog">分配权限</el-button>
           </template>
         </el-table-column>
       </el-table>
     </el-card>
+    <el-dialog title="分配权限" :visible.sync="SetRightDialogVisible" width="50%">
+      <span>这是一段信息</span>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="SetRightDialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="SetRightDialogVisible = false">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -62,7 +69,9 @@ export default {
   data() {
     return {
       // 所有角色列表数据
-      rolesList: []
+      rolesList: [],
+      // 控制分配权限对话框显示隐藏
+      SetRightDialogVisible: false
     }
   },
   created() {
