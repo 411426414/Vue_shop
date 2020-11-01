@@ -136,6 +136,7 @@ export default {
       this.rightsList = res.data
       // 递归获取三级节点的id
       this.getLeafKeys(role, this.defKeys)
+      // 隐藏分配权限对话框
       this.SetRightDialogVisible = true
       console.log(this.rightsList)
     },
