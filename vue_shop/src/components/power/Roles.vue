@@ -130,6 +130,8 @@ export default {
       }
       // 把获取到的权限数据保存到 data 中
       this.rightsList = res.data
+      // 递归获取三级节点的id
+      this.getLeafKeys(role, this.defKeys)
       this.SetRightDialogVisible = true
       console.log(this.rightsList)
     },
