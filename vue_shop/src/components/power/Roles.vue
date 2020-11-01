@@ -153,6 +153,7 @@ export default {
     // 点击为角色分配权限
     async alloRights() {
       const keys = [
+        // ... 展开运算符
         ...this.$refs.treeRef.getCheckedKeys(),
         ...this.$refs.treeRef.getHalfCheckedKeys()
       ]
