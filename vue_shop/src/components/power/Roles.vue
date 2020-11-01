@@ -56,7 +56,7 @@
     </el-card>
     <el-dialog title="分配权限" :visible.sync="SetRightDialogVisible" width="50%">
       <!-- 树形控件 -->
-      <el-tree :data="rightsList" :props="treeProps" show-checkbox node-key="id" default-expand-all></el-tree>
+      <el-tree :data="rightsList" :props="treeProps" show-checkbox node-key="id" default-expand-all :default-checked-keys="defKeys"></el-tree>
       <span slot="footer" class="dialog-footer">
         <el-button @click="SetRightDialogVisible = false">取 消</el-button>
         <el-button type="primary" @click="SetRightDialogVisible = false">确 定</el-button>
@@ -79,7 +79,9 @@ export default {
       treeProps: {
         label: 'authName',
         children: 'children'
-      }
+      },
+      // 默认选定节点的ID值
+      defKeys: [105, 116]
     }
   },
   created() {
