@@ -138,7 +138,7 @@ export default {
       this.getLeafKeys(role, this.defKeys)
       // 隐藏分配权限对话框
       this.SetRightDialogVisible = true
-      console.log(this.rightsList)
+      // console.log(this.rightsList)
     },
     // 通过递归的形式，获取角色下所有三级权限的id，并保存到 defKeys 数组中
     getLeafKeys(node, arr) {
