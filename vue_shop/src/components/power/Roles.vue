@@ -71,7 +71,9 @@ export default {
       // 所有角色列表数据
       rolesList: [],
       // 控制分配权限对话框显示隐藏
-      SetRightDialogVisible: false
+      SetRightDialogVisible: false,
+      // 所有权限的数据
+      rightsList: []
     }
   },
   created() {
@@ -109,6 +111,18 @@ export default {
       this.$message.error('删除权限成功')
       // this.getRolesList()
       role.children = res.data
+    },
+    // 展示分配权限对话框
+    async showSetRightDialog() {
+      // 获取所有权限的数据
+      const { data: res } = await this.$http.get('rights/tree')
+      if (res.meta.status !== 200) {
+        return this.$message.error('获取权限数据列表失败')
+      }
+      // 把获取到的权限数据保存到 data 中
+      this.rightsList = res.data
+      this.SetRightDialogVisible = true
+      console.log(this.rightsList)
     }
   }
 }
