@@ -57,10 +57,10 @@
     <!-- 分配权限的对话框 -->
     <el-dialog title="分配权限" :visible.sync="SetRightDialogVisible" width="50%" @close="SetRightDialogClosed">
       <!-- 树形控件 -->
-      <el-tree :data="rightsList" :props="treeProps" show-checkbox node-key="id" default-expand-all :default-checked-keys="defKeys"></el-tree>
+      <el-tree :data="rightsList" :props="treeProps" show-checkbox node-key="id" default-expand-all :default-checked-keys="defKeys" ref="treeRef"></el-tree>
       <span slot="footer" class="dialog-footer">
         <el-button @click="SetRightDialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="SetRightDialogVisible = false">确 定</el-button>
+        <el-button type="primary" @click="alloRights">确 定</el-button>
       </span>
     </el-dialog>
   </div>
@@ -82,7 +82,9 @@ export default {
         children: 'children'
       },
       // 默认选定节点的ID值
-      defKeys: []
+      defKeys: [],
+      // 当前即将分配权限的id
+      roleId: ''
     }
   },
   created() {
@@ -117,12 +119,13 @@ export default {
       if (res.meta.status !== 200) {
         return this.$message.error('删除权限失败')
       }
-      this.$message.error('删除权限成功')
+      this.$message.success('删除权限成功')
       // this.getRolesList()
       role.children = res.data
     },
     // 展示分配权限对话框
     async showSetRightDialog(role) {
+      this.roleId = role.id
       // 获取所有权限的数据
       const { data: res } = await this.$http.get('rights/tree')
       if (res.meta.status !== 200) {
@@ -146,6 +149,21 @@ export default {
     // 监听分配权限对话框的关闭事件
     SetRightDialogClosed() {
       this.defKeys = []
+    },
+    // 点击为角色分配权限
+    async alloRights() {
+      const keys = [
+        ...this.$refs.treeRef.getCheckedKeys(),
+        ...this.$refs.treeRef.getHalfCheckedKeys()
+      ]
+      const idStr = keys.join(',')
+      const { data: res } = await this.$http.post(`roles/${this.roleId}/rights`, { rids: idStr })
+      if (res.meta.status !== 200) {
+        return this.$message.error('分配权限失败')
+      }
+      this.$message.success('分配权限成功')
+      this.getRolesList()
+      this.SetRightDialogVisible = false
     }
   }
 }
