@@ -103,7 +103,12 @@ export default {
       roleId: '',
 
       // 控制添加角色对话框显示隐藏
-      addRightDialogVisible: false
+      addRightDialogVisible: false,
+      // 添加角色的表单数据对象
+      addForm: {
+        roleName: '',
+        roleDesc: ''
+      }
     }
   },
   created() {
