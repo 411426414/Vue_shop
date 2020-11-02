@@ -120,7 +120,6 @@ export default {
 
       // 控制添加角色对话框显示隐藏
       addRightDialogVisible: false,
-      // 控制修改角色对话框显示隐藏
       editRightDialogVisible: false,
       // 添加角色的表单数据对象
       addForm: {
@@ -228,6 +227,21 @@ export default {
       this.$message.success('分配权限成功')
       this.getRolesList()
       this.SetRightDialogVisible = false
+    },
+
+    // 添加角色
+    addRoles() {
+      this.$refs.addFormRef.validate(async valid => {
+        if (!valid) return
+        const { data: res } = await this.$http.post('roles', this.addForm)
+        if (res.meta.status !== 201) {
+          this.$message.error('添加角色失败！')
+        }
+        this.$message.success('添加用户成功！')
+        // 隐藏添加用户的对话框
+        this.addRightDialogVisible = false
+        this.getRolesList()
+      })
     }
   }
 }
