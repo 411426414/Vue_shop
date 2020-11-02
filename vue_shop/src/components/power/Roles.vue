@@ -11,7 +11,7 @@
       <!-- 添加角色按钮 -->
       <el-row>
         <el-col>
-          <el-button type="primary">添加角色</el-button>
+          <el-button type="primary" @click="addRightDialogVisible = true">添加角色</el-button>
         </el-col>
       </el-row>
       <!-- 角色列表区域 -->
@@ -47,8 +47,8 @@
         <el-table-column label="角色描述" prop="roleDesc"></el-table-column>
         <el-table-column label="操作" width='300'>
           <template slot-scope="scope">
-            <el-button type='primary' icon='el-icon-edit' size='mini'>编辑</el-button>
-            <el-button type='danger' icon='el-icon-delect' size='mini'>删除</el-button>
+            <el-button type='primary' icon='el-icon-edit' size='mini' @click="showEditDialog(scope.row.id)">编辑</el-button>
+            <el-button type='danger' icon='el-icon-delect' size='mini' @click="removeRight(scope.row.id)">删除</el-button>
             <el-button type='warning' icon='el-icon-setting' size='mini' @click="showSetRightDialog(scope.row)">分配权限</el-button>
           </template>
         </el-table-column>
@@ -61,6 +61,22 @@
       <span slot="footer" class="dialog-footer">
         <el-button @click="SetRightDialogVisible = false">取 消</el-button>
         <el-button type="primary" @click="alloRights">确 定</el-button>
+      </span>
+    </el-dialog>
+
+    <!-- 添加的对话框 -->
+    <el-dialog title="提示" :visible.sync="addRightDialogVisible" width="50%">
+      <el-form label-width="80px" :model="addForm" :rules="addFormRules" ref="addFormRef">
+        <el-form-item label="角色名称" prop="roleName">
+          <el-input v-model="addForm.roleName"></el-input>
+        </el-form-item>
+        <el-form-item label="角色描述" prop="roleDesc">
+          <el-input v-model="addForm.roleDesc"></el-input>
+        </el-form-item>
+      </el-form>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="addRightDialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="addRoles">确 定</el-button>
       </span>
     </el-dialog>
   </div>
@@ -84,7 +100,10 @@ export default {
       // 默认选定节点的ID值
       defKeys: [],
       // 当前即将分配权限的id
-      roleId: ''
+      roleId: '',
+
+      // 控制添加角色对话框显示隐藏
+      addRightDialogVisible: false
     }
   },
   created() {
