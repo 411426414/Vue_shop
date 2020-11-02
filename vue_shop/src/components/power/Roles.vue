@@ -252,6 +252,10 @@ export default {
       }
       this.editForm = res.data
       this.editRightDialogVisible = true
+    },
+    // 监听修改角色对话框的关闭事件
+    editDialogClosed() {
+      this.$refs.editFormRef.resetFields()
     }
   }
 }
