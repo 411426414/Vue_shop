@@ -104,6 +104,8 @@ export default {
 
       // 控制添加角色对话框显示隐藏
       addRightDialogVisible: false,
+      // 控制修改角色对话框显示隐藏
+      editRightDialogVisible: false,
       // 添加角色的表单数据对象
       addForm: {
         roleName: '',
@@ -117,6 +119,15 @@ export default {
         roleDesc: [
           { required: true, message: '请输入用户名', trigger: ['blur', 'change'] },
           { min: 2, max: 10, message: '用户名的长度在 2 到 10 个字符' }
+        ]
+      },
+      editForm: {},
+      editFormRules: {
+        roleName: [
+          { required: true }
+        ],
+        roleDesc: [
+          { required: true }
         ]
       }
     }
