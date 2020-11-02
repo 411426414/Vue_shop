@@ -108,6 +108,16 @@ export default {
       addForm: {
         roleName: '',
         roleDesc: ''
+      },
+      addFormRules: {
+        roleName: [
+          { required: true, message: '请输入用户名', trigger: ['blur', 'change'] },
+          { min: 2, max: 10, message: '用户名的长度在 2 到 10 个字符' }
+        ],
+        roleDesc: [
+          { required: true, message: '请输入用户名', trigger: ['blur', 'change'] },
+          { min: 2, max: 10, message: '用户名的长度在 2 到 10 个字符' }
+        ]
       }
     }
   },
