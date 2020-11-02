@@ -242,6 +242,16 @@ export default {
         this.addRightDialogVisible = false
         this.getRolesList()
       })
+    },
+
+    // 编辑角色的对话框
+    async showEditDialog(id) {
+      const { data: res } = await this.$http.get('roles/' + id)
+      if (res.meta.status !== 200) {
+        return this.$message.error('查询用户信息失败！')
+      }
+      this.editForm = res.data
+      this.editRightDialogVisible = true
     }
   }
 }
