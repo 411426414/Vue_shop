@@ -79,6 +79,22 @@
         <el-button type="primary" @click="addRoles">确 定</el-button>
       </span>
     </el-dialog>
+
+    <!-- 修改角色对话框 -->
+    <el-dialog title="修改角色" :visible.sync="editRightDialogVisible" width="50%" @close="editDialogClosed">
+      <el-form :model="editForm" :rules="editFormRules" ref="editFormRef" label-width="70px">
+        <el-form-item label="角色名称" prop="roleName">
+          <el-input v-model="editForm.roleName"></el-input>
+        </el-form-item>
+        <el-form-item label="角色描述" prop="roleDesc">
+          <el-input v-model="editForm.roleDesc"></el-input>
+        </el-form-item>
+      </el-form>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="editRightDialogVisible = false">取 消</el-button>
+        <el-button @click="ediRolesInfo" type="primary">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
