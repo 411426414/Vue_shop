@@ -244,7 +244,7 @@ export default {
       })
     },
 
-    // 编辑角色的对话框
+    // 编辑用户的对话框
     async showEditDialog(id) {
       const { data: res } = await this.$http.get('roles/' + id)
       if (res.meta.status !== 200) {
@@ -253,9 +253,30 @@ export default {
       this.editForm = res.data
       this.editRightDialogVisible = true
     },
-    // 监听修改角色对话框的关闭事件
+    // 监听修改用户对话框的关闭事件
     editDialogClosed() {
       this.$refs.editFormRef.resetFields()
+    },
+    // 修改用户信息并提交
+    ediRolesInfo() {
+      this.$refs.editFormRef.validate(async valid => {
+        // if (valid) return
+        // 可以发起修改用户的网络请求
+        const { data: res } = await this.$http.put('roles/' + this.editForm.roleId, {
+          roleName: this.editForm.roleName,
+          roleDesc: this.editForm.roleDesc
+        })
+        console.log(res)
+        if (res.meta.status !== 200) {
+          return this.$message.error('更新用户信息失败！')
+        }
+        // 关闭对话框
+        this.editRightDialogVisible = false
+        // 刷新数据列表
+        this.getRolesList()
+        // 提示修改成功
+        this.$message.success('更新用户数据成功')
+      })
     }
   }
 }
