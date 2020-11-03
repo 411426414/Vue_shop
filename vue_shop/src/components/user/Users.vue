@@ -208,7 +208,9 @@ export default {
       // 需要被分配角色的用户信息
       userInfo: {},
       // 所有角色的数据列表
-      rolesList: {}
+      rolesList: {},
+      // 已选中的角色id值
+      selectedRoled: ''
     }
   },
   created() {
