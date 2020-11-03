@@ -43,7 +43,7 @@
             <el-button type='danger' size='mini' icon='el-icon-delete' @click="removeUserById(scope.row.id)"></el-button>
             <!-- 分配角色 -->
             <el-tooltip effect="dark" content="分配角色" placement="top" :enterable='false'>
-              <el-button type='warning' size='mini' icon='el-icon-setting'></el-button>
+              <el-button type='warning' size='mini' icon='el-icon-setting' @click="setRole"></el-button>
             </el-tooltip>
           </template>
         </el-table-column>
@@ -310,6 +310,10 @@ export default {
       }
       this.$message.error('删除用户成功')
       this.getUserList()
+    },
+    // 展示分配角色的对话框
+    setRole() {
+      this,setRoleDialogVisible = true
     }
   }
 }
