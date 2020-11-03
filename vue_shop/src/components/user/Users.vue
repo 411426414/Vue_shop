@@ -101,6 +101,14 @@
         <el-button @click="editUserInfo" type="primary">确 定</el-button>
       </span>
     </el-dialog>
+    <!-- 分配角色对话框 -->
+    <el-dialog title="分配角色" :visible.sync="setRoleDialogVisible" width="50%">
+      <span>这是一段信息</span>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="setRoleDialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="setRoleDialogVisible = false">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -180,7 +188,9 @@ export default {
           { required: true, message: '请输入手机号', trigger: 'blur' },
           { validator: checkMobile, trigger: ['blur', 'change'] }
         ]
-      }
+      },
+      // 控制分配角色对话框的显示与隐藏
+      setRoleDialogVisible: false
     }
   },
   created() {
