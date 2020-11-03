@@ -217,6 +217,7 @@ export default {
     this.getUserList()
   },
   methods: {
+    // 获取用户列表
     async getUserList() {
       const { data: res } = await this.$http.get('users', {
         params: this.queryInfo
@@ -353,6 +354,8 @@ export default {
         return this.$message.error('更新角色失败！')
       }
       this.$message.success('更新角色成功！')
+      this.getUserList()
+      this.setRoleDialogVisible = false
     }
   }
 }
