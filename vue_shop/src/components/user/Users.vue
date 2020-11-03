@@ -321,6 +321,13 @@ export default {
     // 展示分配角色的对话框
     async setRole(userInfo) {
       this.userInfo = userInfo
+
+      // 在展示对话框之前，获取所有角色的列表
+      const { data: res } = await this.$http.get('roles')
+      if (res.meta.status !== 200) {
+        return this.$message.error('获取角色列表失败！')
+      }
+      this.setRoleDialogVisible = true
     }
   }
 }
