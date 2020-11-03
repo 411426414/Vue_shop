@@ -193,7 +193,9 @@ export default {
         ]
       },
       // 控制分配角色对话框的显示与隐藏
-      setRoleDialogVisible: false
+      setRoleDialogVisible: false,
+      // 需要被分配角色的用户信息
+      userInfo: {}
     }
   },
   created() {
