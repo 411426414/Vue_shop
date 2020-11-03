@@ -36,14 +36,14 @@
         </el-table-column>
         <!-- 使用template定义作用域插槽，通过slot-scope接受了当前作用域的数据 -->
         <el-table-column label="操作" width='180px'>
-          <template slot-scope="scope"> <!-- scope -->
+          <template slot-scope="scope">
             <!-- 修改按钮 -->
             <el-button @click="showEditDialog(scope.row.id)" type='primary' size='mini' icon='el-icon-edit'></el-button>
             <!-- 删除按钮 -->
             <el-button type='danger' size='mini' icon='el-icon-delete' @click="removeUserById(scope.row.id)"></el-button>
             <!-- 分配角色 -->
             <el-tooltip effect="dark" content="分配角色" placement="top" :enterable='false'>
-              <el-button type='warning' size='mini' icon='el-icon-setting' @click="setRole"></el-button>
+              <el-button type='warning' size='mini' icon='el-icon-setting' @click="setRole(scope.row)"></el-button>
             </el-tooltip>
           </template>
         </el-table-column>
@@ -103,7 +103,10 @@
     </el-dialog>
     <!-- 分配角色对话框 -->
     <el-dialog title="分配角色" :visible.sync="setRoleDialogVisible" width="50%">
-      <span>这是一段信息</span>
+      <div>
+        <p>当前的用户: {{userInfo.username}}</p>
+        <p>当前的角色: {{userInfo.role_name}}</p>
+      </div>
       <span slot="footer" class="dialog-footer">
         <el-button @click="setRoleDialogVisible = false">取 消</el-button>
         <el-button type="primary" @click="setRoleDialogVisible = false">确 定</el-button>
@@ -312,8 +315,8 @@ export default {
       this.getUserList()
     },
     // 展示分配角色的对话框
-    setRole() {
-      this,setRoleDialogVisible = true
+    async setRole(userInfo) {
+      this.userInfo = userInfo
     }
   }
 }
