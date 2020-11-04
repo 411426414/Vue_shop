@@ -13,6 +13,8 @@
           <el-button type='primary'>添加分类</el-button>
         </el-col>
       </el-row>
+      <!-- 表格区域 -->
+      <!-- 分页区域 -->
     </el-card>
   </div>
 </template>
