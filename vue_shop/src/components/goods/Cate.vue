@@ -8,6 +8,11 @@
     </el-breadcrumb>
     <!-- 卡片视图区域 -->
     <el-card>
+      <el-row>
+        <el-col>
+          <el-button type='primary'>添加分类</el-button>
+        </el-col>
+      </el-row>
     </el-card>
   </div>
 </template>
