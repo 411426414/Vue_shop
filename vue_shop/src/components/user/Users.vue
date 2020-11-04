@@ -359,6 +359,7 @@ export default {
     },
     // 监听分配角色对话框的关闭事件
     setRoleDialogClosed() {
+      this.selectedRoled = ''
     }
   }
 }
