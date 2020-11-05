@@ -45,6 +45,11 @@
           <el-tag size="mini" type="success" v-else-if="scope.row.cat_level === 1" >二级</el-tag >
           <el-tag size="mini" type="warning" v-else>三级</el-tag>
         </template>
+        <!-- 操作 -->
+        <template slot="opt" slot-scope="scope">
+          <el-button type="primary" icon="el-icon-edit">主要按钮</el-button>
+          <el-button type="danger" icon="el-icon-delete">成功按钮</el-button>
+        </template>
       </tree-table>
       <!-- 分页区域 -->
     </el-card>
@@ -84,6 +89,13 @@ export default {
           type: 'template',
           // 表示当前这一列使用的名称,使用template指定一个作用域插槽
           template: 'order'
+        },
+        {
+          label: '操作',
+          // 表示当前列定义为模板列
+          type: 'template',
+          // 表示当前这一列使用的名称,使用template指定一个作用域插槽
+          template: 'opt'
         }
       ]
     }
