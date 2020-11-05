@@ -56,6 +56,8 @@ export default {
       this.$message.success('获取商品分类数据列表成功！')
       // 把数据列表赋值给catelist
       this.cateList = res.data.result
+      // 为总数据条数赋值
+      this.total = res.data.total
     }
   }
 }
