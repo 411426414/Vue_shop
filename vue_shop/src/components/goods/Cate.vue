@@ -13,7 +13,27 @@
           <el-button type="primary">添加分类</el-button>
         </el-col>
       </el-row>
-      <!-- 表格区域 -->
+      <!--
+        表格区域：
+          data 表格各行的数据
+          columns 表格各列的配置
+          border 是否显示纵向边框
+          show-index 是否显示数据索引
+          index-text 数据索引名称
+          expand-type 是否为展开行类型表格（为 True 时，需要添加名称为 '$expand' 的作用域插槽, 它可以获取到 row, rowIndex)
+          selection-type 是否为多选类型表格
+          show-row-hover 鼠标悬停时，是否高亮当前行
+      -->
+      <tree-table
+        :data="cateList"
+        :columns="columns"
+        border
+        show-index
+        index-text="#"
+        :expand-type="false"
+        :selection-type="false"
+        :show-row-hover="false"
+      ></tree-table>
       <!-- 分页区域 -->
     </el-card>
   </div>
