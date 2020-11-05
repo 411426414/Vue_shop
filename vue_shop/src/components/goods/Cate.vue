@@ -30,7 +30,9 @@ export default {
         pagesize: 5
       },
       // 商品分类数据列表，默认为空
-      cateList: []
+      cateList: [],
+      // 总数据条数
+      total: 0
     }
   },
   created() {
