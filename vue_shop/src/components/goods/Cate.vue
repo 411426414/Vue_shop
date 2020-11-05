@@ -37,7 +37,13 @@
         <!-- 是否有效 -->
         <template slot="isOk" slot-scope="scope">
           <i class="el-icon-success" v-if="scope.row.cat_deleted === false" style="color: lightgreen"></i>
-          <i class="el-icon-error" v-else style="color: red"></i>
+          <i class="el-icon-error" v-else  style="color: red"></i>
+        </template>
+        <!-- 排序 -->
+        <template slot="order" slot-scope="scope">
+          <el-tag size="mini" v-if="scope.row.cat_level === 0">一级</el-tag>
+          <el-tag size="mini" type="success" v-else-if="scope.row.cat_level === 1" >二级</el-tag >
+          <el-tag size="mini" type="warning" v-else>三级</el-tag>
         </template>
       </tree-table>
       <!-- 分页区域 -->
@@ -71,6 +77,13 @@ export default {
           type: 'template',
           // 表示当前这一列使用的名称,使用template指定一个作用域插槽
           template: 'isOk'
+        },
+        {
+          label: '排序',
+          // 表示当前列定义为模板列
+          type: 'template',
+          // 表示当前这一列使用的名称,使用template指定一个作用域插槽
+          template: 'order'
         }
       ]
     }
