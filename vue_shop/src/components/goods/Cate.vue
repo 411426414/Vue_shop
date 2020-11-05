@@ -28,7 +28,9 @@ export default {
         type: 3,
         pagenum: 1,
         pagesize: 5
-      }
+      },
+      // 商品分类数据列表，默认为空
+      cateList: []
     }
   },
   created() {
