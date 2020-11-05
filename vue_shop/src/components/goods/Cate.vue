@@ -32,7 +32,14 @@ export default {
       // 商品分类数据列表，默认为空
       cateList: [],
       // 总数据条数
-      total: 0
+      total: 0,
+      // 为table至指定列的定义
+      columns: [
+        {
+          label: '分类名称',
+          prop: 'cat_name'
+        }
+      ]
     }
   },
   created() {
