@@ -54,6 +54,8 @@ export default {
         return this.$message.error('获取商品分类数据列表失败！')
       }
       this.$message.success('获取商品分类数据列表成功！')
+      // 把数据列表赋值给catelist
+      this.cateList = res.data.result
     }
   }
 }
