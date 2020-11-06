@@ -46,6 +46,12 @@
         <!-- 排序 -->
         <template slot="order" slot-scope="scope">
           <el-tag size="mini" v-if="scope.row.cat_level === 0">一级</el-tag>
+          <el-tag
+            size="mini"
+            type="success"
+            v-else-if="scope.row.cat_level === 1"
+            >二级</el-tag
+          >
           <el-tag size="mini" type="warning" v-else>三级</el-tag>
         </template>
         <!-- 操作 -->
