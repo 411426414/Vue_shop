@@ -192,6 +192,9 @@ export default {
     },
     // 点击按钮显示添加分类对话框
     showAddCateDialog() {
+      // 先获取父级分类的数据列表
+      this.getParentCateList()
+      // 再展示对话框
       this.addCateDialogVisible = true
     },
     // 获取父级分类的数据列表
