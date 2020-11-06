@@ -24,7 +24,7 @@
           selection-type 是否为多选类型表格
           show-row-hover 鼠标悬停时，是否高亮当前行
       -->
-      <tree-table
+      <tree-table class="treeTable"
         :data="cateList"
         :columns="columns"
         border
@@ -36,17 +36,20 @@
       >
         <!-- 是否有效 -->
         <template slot="isOk" slot-scope="scope">
-          <i class="el-icon-success" v-if="scope.row.cat_deleted === false" style="color: lightgreen"></i>
-          <i class="el-icon-error" v-else  style="color: red"></i>
+          <i
+            class="el-icon-success"
+            v-if="scope.row.cat_deleted === false"
+            style="color: lightgreen"
+          ></i>
+          <i class="el-icon-error" v-else style="color: red"></i>
         </template>
         <!-- 排序 -->
         <template slot="order" slot-scope="scope">
           <el-tag size="mini" v-if="scope.row.cat_level === 0">一级</el-tag>
-          <el-tag size="mini" type="success" v-else-if="scope.row.cat_level === 1" >二级</el-tag >
           <el-tag size="mini" type="warning" v-else>三级</el-tag>
         </template>
         <!-- 操作 -->
-        <template slot="opt" slot-scope="scope">
+        <template slot="opt" slot-scope="">
           <el-button type="primary" icon="el-icon-edit">主要按钮</el-button>
           <el-button type="danger" icon="el-icon-delete">成功按钮</el-button>
         </template>
@@ -120,5 +123,3 @@ export default {
   }
 }
 </script>
-
-<style lang="stylus" scoped></style>
