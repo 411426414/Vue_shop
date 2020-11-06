@@ -153,6 +153,12 @@ export default {
         cat_name: '',
         // 分类等级默认要添加的是一级分类
         cat_level: 0
+      },
+      // 添加分类表单的验证规则对象
+      addCateFormRules: {
+        cat_name: [
+          { required: true, message: '请输入分类名称', trigger: 'blur' }
+        ]
       }
     }
   },
