@@ -78,7 +78,6 @@
       title="添加分类"
       :visible.sync="addCateDialogVisible"
       width="50%"
-      :before-close="handleClose"
     >
       <el-form
         :model="addCateForm"
@@ -159,7 +158,9 @@ export default {
         cat_name: [
           { required: true, message: '请输入分类名称', trigger: 'blur' }
         ]
-      }
+      },
+      // 父级分类的数据列表
+      parentCateList: []
     }
   },
   created() {
