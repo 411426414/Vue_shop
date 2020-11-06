@@ -10,7 +10,7 @@
     <el-card>
       <el-row>
         <el-col>
-          <el-button type="primary">添加分类</el-button>
+          <el-button type="primary" @click="showAddCateDialog">添加分类</el-button>
         </el-col>
       </el-row>
       <!--
@@ -24,7 +24,8 @@
           selection-type 是否为多选类型表格
           show-row-hover 鼠标悬停时，是否高亮当前行
       -->
-      <tree-table class="treeTable"
+      <tree-table
+        class="treeTable"
         :data="cateList"
         :columns="columns"
         border
@@ -72,6 +73,20 @@
       >
       </el-pagination>
     </el-card>
+    <!-- 添加分类的对话框 -->
+    <el-dialog
+      title="添加分类"
+      :visible.sync="addCateDialogVisible"
+      width="50%"
+      :before-close="handleClose"
+    >
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="addCateDialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="addCateDialogVisible = false"
+          >确 定</el-button
+        >
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -116,7 +131,9 @@ export default {
           // 表示当前这一列使用的名称,使用template指定一个作用域插槽
           template: 'opt'
         }
-      ]
+      ],
+      // 控制添加分类对话框的显示与隐藏
+      addCateDialogVisible: false
     }
   },
   created() {
@@ -145,6 +162,10 @@ export default {
     handleCurrentChange(newNum) {
       this.queryInfo.pagenum = newNum
       this.getCateList()
+    },
+    // 点击按钮显示添加分类对话框
+    showAddCateDialog() {
+      this.addCateDialogVisible = true
     }
   }
 }
