@@ -63,6 +63,7 @@
       <!-- 分页区域 -->
       <el-pagination
         @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
         :current-page="queryInfo.pagenum"
         :page-sizes="[3, 5, 10, 15]"
         :page-size="queryInfo.pagesize"
@@ -138,6 +139,11 @@ export default {
     // 监听 pagesize 改变
     handleSizeChange(newSize) {
       this.queryInfo.pagesize = newSize
+      this.getCateList()
+    },
+    // 监听 pagenum 改变
+    handleCurrentChange(newNum) {
+      this.queryInfo.pagenum = newNum
       this.getCateList()
     }
   }
