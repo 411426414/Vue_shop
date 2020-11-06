@@ -62,6 +62,7 @@
       </tree-table>
       <!-- 分页区域 -->
       <el-pagination
+        @size-change="handleSizeChange"
         :current-page="queryInfo.pagenum"
         :page-sizes="[3, 5, 10, 15]"
         :page-size="queryInfo.pagesize"
@@ -133,6 +134,11 @@ export default {
       this.cateList = res.data.result
       // 为总数据条数赋值
       this.total = res.data.total
+    },
+    // 监听 pagesize 改变
+    handleSizeChange(newSize) {
+      this.queryInfo.pagesize = newSize
+      this.getCateList()
     }
   }
 }
