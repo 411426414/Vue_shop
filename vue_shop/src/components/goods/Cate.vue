@@ -144,7 +144,16 @@ export default {
         }
       ],
       // 控制添加分类对话框的显示与隐藏
-      addCateDialogVisible: false
+      addCateDialogVisible: false,
+      // 添加分类的表单数据对象
+      addCateForm: {
+        // 父级分类id
+        car_pid: 0,
+        // 将要添加的分类名称
+        cat_name: '',
+        // 分类等级默认要添加的是一级分类
+        cat_level: 0
+      }
     }
   },
   created() {
