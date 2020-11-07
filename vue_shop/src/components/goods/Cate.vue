@@ -98,7 +98,7 @@
             :options="parentCateList"
             :props="cascaderProps"
             v-model="selectedKeys"
-            @change="parentCtaeChange"
+            @change="parentCateChanged"
             clearable
             filterable
             change-on-select
@@ -231,7 +231,7 @@ export default {
       console.log(this.parentCateList)
     },
     // 选择器发生改变触发
-    parentCtaeChange() {
+    parentCateChange() {
       console.log(this.selectedKeys)
     }
   }
