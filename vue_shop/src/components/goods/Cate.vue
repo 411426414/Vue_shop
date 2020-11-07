@@ -227,7 +227,7 @@ export default {
       this.parentCateList = res.data
       console.log(this.parentCateList)
     },
-    // 选择器发生改变触发
+    // 选择器发生改变改变
     parentCtaeChange() {
       console.log(this.selectedKeys)
     }
@@ -238,5 +238,8 @@ export default {
 <style lang="less" scoped>
 .treeTable{
   margin-top: 15px;
+}
+.el-cascader {
+  width: 100%;
 }
 </style>
