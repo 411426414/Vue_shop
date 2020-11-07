@@ -96,6 +96,7 @@
           <el-cascader
             expand-trigger="hover"
             :options="parentCateList"
+            :props="cascaderProps"
           >
           </el-cascader>
         </el-form-item>
@@ -170,7 +171,13 @@ export default {
         ]
       },
       // 父级分类的数据列表
-      parentCateList: []
+      parentCateList: [],
+      // 指定级联选择器配置对象
+      cascaderProps: {
+        value: 'cat_id',
+        label: 'cat_name',
+        children: 'children'
+      }
     }
   },
   created() {
