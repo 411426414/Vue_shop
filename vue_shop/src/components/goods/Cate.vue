@@ -88,7 +88,17 @@
         <el-form-item label="分类名称:" prop="cat_name">
           <el-input v-model="addCateForm.cat_name"></el-input>
         </el-form-item>
-        <el-form-item label="分类分类:" ></el-form-item>
+        <el-form-item label="分类分类:" >
+          <!--
+            options: 用来指定数据源
+            props: 用来配置对象
+          -->
+          <el-cascader
+            expand-trigger="hover"
+            :options="parentCateList"
+          >
+          </el-cascader>
+        </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="addCateDialogVisible = false">取 消</el-button>
