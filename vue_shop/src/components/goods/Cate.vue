@@ -98,6 +98,7 @@
             :options="parentCateList"
             :props="cascaderProps"
             v-model="selectedKeys"
+            @change="parentCtaeChange"
           >
           </el-cascader>
         </el-form-item>
@@ -225,6 +226,10 @@ export default {
       }
       this.parentCateList = res.data
       console.log(this.parentCateList)
+    },
+    // 选择器发生改变触发
+    parentCtaeChange() {
+      console.log(this.selectedKeys)
     }
   }
 }
