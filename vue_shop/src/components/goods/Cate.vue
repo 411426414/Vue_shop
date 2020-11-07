@@ -97,6 +97,7 @@
             expand-trigger="hover"
             :options="parentCateList"
             :props="cascaderProps"
+            v-model="selectedKeys"
           >
           </el-cascader>
         </el-form-item>
@@ -177,7 +178,9 @@ export default {
         value: 'cat_id',
         label: 'cat_name',
         children: 'children'
-      }
+      },
+      // 选中的父级的ID数组
+      selectedKeys: []
     }
   },
   created() {
