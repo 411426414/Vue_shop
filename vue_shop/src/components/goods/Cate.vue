@@ -231,7 +231,7 @@ export default {
       console.log(this.parentCateList)
     },
     // 选择器发生改变触发
-    parentCateChange() {
+    parentCateChanged() {
       console.log(this.selectedKeys)
     }
   }
