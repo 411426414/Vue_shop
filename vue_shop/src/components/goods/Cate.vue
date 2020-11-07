@@ -101,6 +101,7 @@
             @change="parentCtaeChange"
             clearable
             filterable
+            change-on-select
           >
           </el-cascader>
         </el-form-item>
