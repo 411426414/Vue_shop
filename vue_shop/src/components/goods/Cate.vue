@@ -90,8 +90,14 @@
         </el-form-item>
         <el-form-item label="分类分类:" >
           <!--
+            expandTrigger: 次级菜单的展开方式
             options: 用来指定数据源
             props: 用来配置对象
+            value / v-model：选中项绑定值
+            @change: 发生改变是触发
+            clearable: 是否支持清空选项
+            filterable: 是否可搜索选项
+            change-on-select: 是否允许选择任意一级的选项
           -->
           <el-cascader
             expand-trigger="hover"
