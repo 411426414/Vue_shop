@@ -78,6 +78,7 @@
       title="添加分类"
       :visible.sync="addCateDialogVisible"
       width="50%"
+      @close="addCateDialogClosed"
     >
       <el-form
         :model="addCateForm"
@@ -114,8 +115,7 @@
       </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="addCateDialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="addCate">确 定</el-button
-        >
+        <el-button type="primary" @click="addCate">确 定</el-button>
       </span>
     </el-dialog>
   </div>
@@ -257,6 +257,9 @@ export default {
     // 点击按钮，添加新的分类
     addCate() {
       console.log(this.addCateForm)
+    },
+    // 监听对话框的关闭事件
+    addCateDialogClosed() {
     }
   }
 }
