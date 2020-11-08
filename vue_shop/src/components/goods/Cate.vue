@@ -264,6 +264,9 @@ export default {
       this.$refs.addCateFormRef.resetFields()
       // 清空选中的父级的ID数组
       this.selectedKeys = []
+      // 清空添加分类的表单数据对象
+      this.addCateForm.cat_level = 0
+      this.addCateForm.cat_pid = 0
     }
   }
 }
