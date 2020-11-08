@@ -240,6 +240,10 @@ export default {
       console.log(this.selectedKeys)
       // 如果 selectedKeys 数组中的 length 大于0，证明选中的父级分类,反之,就说明没有选中任何父级分类
       if (this.selectedKeys.length > 0) {
+        // 父级分类ID
+        this.addCateForm.cat_pid = this.selectedKeys[
+          this.selectedKeys.length - 1
+        ]
       }
     }
   }
