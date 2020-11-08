@@ -260,6 +260,8 @@ export default {
     },
     // 监听对话框的关闭事件
     addCateDialogClosed() {
+      // 重置表单数据
+      this.$refs.addCateFormRef.resetFields()
     }
   }
 }
