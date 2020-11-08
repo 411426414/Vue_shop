@@ -262,6 +262,8 @@ export default {
     addCateDialogClosed() {
       // 重置表单数据
       this.$refs.addCateFormRef.resetFields()
+      // 清空选中的父级的ID数组
+      this.selectedKeys = []
     }
   }
 }
