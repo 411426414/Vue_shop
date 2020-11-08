@@ -247,6 +247,11 @@ export default {
         // 为当前分类的等级赋值
         this.addCateForm.cat_level = this.selectedKeys.length
         return true
+      } else {
+        // 父级分类ID
+        this.addCateForm.cat_id = 0
+        // 为当前分类的等级赋值
+        this.addCateForm.cat_level = 0
       }
     }
   }
