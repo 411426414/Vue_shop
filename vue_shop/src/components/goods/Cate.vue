@@ -114,7 +114,7 @@
       </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="addCateDialogVisible = false">取 消</el-button>
-        <el-button type="primary">确 定</el-button
+        <el-button type="primary" @click="addCate">确 定</el-button
         >
       </span>
     </el-dialog>
@@ -238,7 +238,7 @@ export default {
     // 选择器发生改变触发
     parentCateChanged() {
       console.log(this.selectedKeys)
-      // 如果 selectedKeys 数组中的 length 大于0，证明选中的父级分类,反之,就说明没有选中任何父级分类
+      // 如果 selectedKeys 数组中的 length 大于0，证明选中的父级分类，反之,就说明没有选中任何父级分类
       if (this.selectedKeys.length > 0) {
         // 父级分类ID
         this.addCateForm.cat_pid = this.selectedKeys[
@@ -253,6 +253,10 @@ export default {
         // 为当前分类的等级赋值
         this.addCateForm.cat_level = 0
       }
+    },
+    // 点击按钮，添加新的分类
+    addCate() {
+      console.log(this.addCateForm)
     }
   }
 }
