@@ -233,7 +233,7 @@ export default {
         return this.$message.error('获取父级分类数据列表失败！')
       }
       this.parentCateList = res.data
-      console.log(this.parentCateList)
+      // console.log(this.parentCateList)
     },
     // 选择器发生改变触发
     parentCateChanged() {
