@@ -28,7 +28,9 @@ export default {
       cateList: []
     }
   },
-  created() {},
+  created() {
+    this.getCateList()
+  },
   methods: {
     // 获取商品分类数据
     async getCateList() {
