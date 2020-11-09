@@ -263,6 +263,7 @@ export default {
           return this.$message.error('添加分类失败!')
         }
         this.$message.success('添加分类成功!')
+        this.getCateList()
       })
     },
     // 监听对话框的关闭事件
