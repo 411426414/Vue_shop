@@ -264,6 +264,7 @@ export default {
         }
         this.$message.success('添加分类成功!')
         this.getCateList()
+        this.addCateDialogVisible = false
       })
     },
     // 监听对话框的关闭事件
