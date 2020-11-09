@@ -6,6 +6,8 @@
       <el-breadcrumb-item>商品管理</el-breadcrumb-item>
       <el-breadcrumb-item>参数列表</el-breadcrumb-item>
     </el-breadcrumb>
+    <!-- 卡片视图区域 -->
+    <el-card></el-card>
   </div>
 </template>
 
