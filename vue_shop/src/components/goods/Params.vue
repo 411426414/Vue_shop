@@ -16,6 +16,7 @@
           <!-- 选择商品分类的级联选择框 -->
           <el-cascader
             expand-trigger="hover"
+            v-model="selectedCateKeys"
             :options="cateList"
             :props="cateProps"
           >
@@ -36,7 +37,9 @@ export default {
         value: 'cat_id',
         label: 'cat_name',
         children: 'children'
-      }
+      },
+      // 级联选择框双向绑定的数组
+      selectedCateKeys: []
     }
   },
   created() {
