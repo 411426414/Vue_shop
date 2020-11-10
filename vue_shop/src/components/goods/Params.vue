@@ -24,6 +24,10 @@
           </el-cascader>
         </el-col>
       </el-row>
+      <el-tabs>
+        <el-tab-pane label="动态参数" name="first">动态参数</el-tab-pane>
+        <el-tab-pane label="静态属性" name="second">静态属性</el-tab-pane>
+      </el-tabs>
     </el-card>
   </div>
 </template>
