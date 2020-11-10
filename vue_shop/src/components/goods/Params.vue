@@ -57,7 +57,12 @@ export default {
     },
     // 级联选择框中项变化，会触发这个函数
     handleChange() {
-      console.log(this.selectedCateKeys)
+      // 证明选中的不是三级分类
+      if (this.selectedCateKeys.length !== 3) {
+        this.selectedCateKeys = []
+        return false
+      }
+      // 证明选中的是三级分类
     }
   }
 }
