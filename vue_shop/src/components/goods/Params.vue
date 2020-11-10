@@ -17,6 +17,7 @@
           <el-cascader
             expand-trigger="hover"
             :options="cateList"
+            :props="cateProps"
           >
           </el-cascader>
         </el-col>
@@ -29,7 +30,13 @@
 export default {
   data() {
     return {
-      cateList: []
+      cateList: [],
+      // 级联选择框的配置对象
+      cateProps: {
+        value: 'cat_id',
+        label: 'cat_name',
+        children: 'children'
+      }
     }
   },
   created() {
