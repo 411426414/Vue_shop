@@ -30,6 +30,11 @@
           <!-- 添加参数的按钮 -->
           <el-button type="primary" size="mini">添加参数</el-button>
         </el-tab-pane>
+        <!-- 添加静态属性的面板 -->
+        <el-tab-pane label="静态属性" name="second">
+          <!-- 添加属性的按钮 -->
+          <el-button type="primary" size="mini">静态属性</el-button>
+        </el-tab-pane>
       </el-tabs>
     </el-card>
   </div>
