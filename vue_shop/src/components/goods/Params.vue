@@ -28,12 +28,12 @@
         <!-- 添加动态参数的面板 -->
         <el-tab-pane label="动态参数" name="first">
           <!-- 添加参数的按钮 -->
-          <el-button type="primary" size="mini">添加参数</el-button>
+          <el-button type="primary" size="mini" :disabled="isBtnDisabled">添加参数</el-button>
         </el-tab-pane>
         <!-- 添加静态属性的面板 -->
         <el-tab-pane label="静态属性" name="second">
           <!-- 添加属性的按钮 -->
-          <el-button type="primary" size="mini">静态属性</el-button>
+          <el-button type="primary" size="mini" :disabled="isBtnDisabled">静态属性</el-button>
         </el-tab-pane>
       </el-tabs>
     </el-card>
@@ -81,6 +81,15 @@ export default {
     // tab 页签点击事件的处理函数
     handleClick() {
       console.log(this.activeName)
+    }
+  },
+  computed: {
+    // 如果按钮需要被禁用, 则返回true, 否则返回false
+    isBtnDisabled() {
+      if (this.selectedCateKeys.length !== 3) {
+        return true
+      }
+      return false
     }
   }
 }
