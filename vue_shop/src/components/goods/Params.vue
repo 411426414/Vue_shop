@@ -19,6 +19,7 @@
             v-model="selectedCateKeys"
             :options="cateList"
             :props="cateProps"
+            @change="handleChange"
           >
           </el-cascader>
         </el-col>
@@ -53,6 +54,10 @@ export default {
         return this.$message.error('获取商品分类数据失败！')
       }
       this.cateList = res.data
+    },
+    // 级联选择框中项变化，会触发这个函数
+    handleChange() {
+      console.log(this.selectedCateKeys)
     }
   }
 }
