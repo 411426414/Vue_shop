@@ -14,7 +14,11 @@
         <el-col>
           <span>选择商品分类：</span>
           <!-- 选择商品分类的级联选择框 -->
-          <el-cascader></el-cascader>
+          <el-cascader
+            expand-trigger="hover"
+            :options="cateList"
+          >
+          </el-cascader>
         </el-col>
       </el-row>
     </el-card>
