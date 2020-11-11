@@ -77,6 +77,7 @@ export default {
         return false
       }
       // 证明选中的是三级分类
+      console.log(this.selectedCateKeys)
     },
     // tab 页签点击事件的处理函数
     handleClick() {
