@@ -26,12 +26,12 @@
       </el-row>
       <el-tabs v-model="activeName" @tab-click="handleClick">
         <!-- 添加动态参数的面板 -->
-        <el-tab-pane label="动态参数" name="first">
+        <el-tab-pane label="动态参数" name="many">
           <!-- 添加参数的按钮 -->
           <el-button type="primary" size="mini" :disabled="isBtnDisabled">添加参数</el-button>
         </el-tab-pane>
         <!-- 添加静态属性的面板 -->
-        <el-tab-pane label="静态属性" name="second">
+        <el-tab-pane label="静态属性" name="only">
           <!-- 添加属性的按钮 -->
           <el-button type="primary" size="mini" :disabled="isBtnDisabled">静态属性</el-button>
         </el-tab-pane>
@@ -54,7 +54,7 @@ export default {
       // 级联选择框双向绑定的数组
       selectedCateKeys: [],
       // 被激活的页签的名称
-      activeName: 'first'
+      activeName: 'many'
     }
   },
   created() {
