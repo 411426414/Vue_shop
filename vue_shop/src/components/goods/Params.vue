@@ -31,6 +31,8 @@
           <el-button type="primary" size="mini" :disabled="isBtnDisabled">添加参数</el-button>
           <!-- 动态参数表格 -->
           <el-table :data="manyTableData" border stripe>
+            <!-- 展开行 -->
+            <el-table-column type="expand"></el-table-column>
           </el-table>
         </el-tab-pane>
         <!-- 添加静态属性的面板 -->
