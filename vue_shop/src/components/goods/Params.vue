@@ -106,7 +106,11 @@ export default {
       // 静态属性的数据
       onlyTableData: [],
       // 控制添加对话框的显示或隐藏
-      addDialogVisible: false
+      addDialogVisible: false,
+      // 添加参数的表单数据对象
+      addForm: {
+        attr_name: ''
+      }
     }
   },
   created() {
