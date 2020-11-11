@@ -35,6 +35,13 @@
             <el-table-column type="expand"></el-table-column>
             <!-- 索引列 -->
             <el-table-column type="index"></el-table-column>
+            <el-table-column label="参数名称" prop="attr_name"></el-table-column>
+            <el-table-column label="操作">
+              <template>
+                <el-button type="primary" icon="el-icon-edit" size="mini">编辑</el-button>
+                <el-button type="danger" icon="el-icon-delete" size="mini">删除</el-button>
+              </template>
+            </el-table-column>
           </el-table>
         </el-tab-pane>
         <!-- 添加静态属性的面板 -->
