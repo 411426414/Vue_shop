@@ -70,7 +70,16 @@ export default {
       this.cateList = res.data
     },
     // 级联选择框中项变化，会触发这个函数
-    async handleChange() {
+    handleChange() {
+      this.getParamsData()
+    },
+    // tab 页签点击事件的处理函数
+    handleClick() {
+      console.log(this.activeName)
+      this.getParamsData()
+    },
+    // 获取参数列表数据
+    async getParamsData() {
       // 证明选中的不是三级分类
       if (this.selectedCateKeys.length !== 3) {
         this.selectedCateKeys = []
@@ -87,10 +96,6 @@ export default {
         return this.$message.error('获取参数列表失败！')
       }
       console.log(res.data)
-    },
-    // tab 页签点击事件的处理函数
-    handleClick() {
-      console.log(this.activeName)
     }
   },
   computed: {
