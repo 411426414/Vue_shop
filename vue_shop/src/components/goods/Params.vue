@@ -33,6 +33,8 @@
           <el-table :data="manyTableData" border stripe>
             <!-- 展开行 -->
             <el-table-column type="expand"></el-table-column>
+            <!-- 索引列 -->
+            <el-table-column type="index"></el-table-column>
           </el-table>
         </el-tab-pane>
         <!-- 添加静态属性的面板 -->
