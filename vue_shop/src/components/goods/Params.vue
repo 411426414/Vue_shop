@@ -48,6 +48,20 @@
         <el-tab-pane label="静态属性" name="only">
           <!-- 添加属性的按钮 -->
           <el-button type="primary" size="mini" :disabled="isBtnDisabled">静态属性</el-button>
+          <!-- 静态属性表格 -->
+          <el-table :data="onlyTableData" border stripe>
+            <!-- 展开行 -->
+            <el-table-column type="expand"></el-table-column>
+            <!-- 索引列 -->
+            <el-table-column type="index"></el-table-column>
+            <el-table-column label="属性名称" prop="attr_name"></el-table-column>
+            <el-table-column label="操作">
+              <template>
+                <el-button type="primary" icon="el-icon-edit" size="mini">编辑</el-button>
+                <el-button type="danger" icon="el-icon-delete" size="mini">删除</el-button>
+              </template>
+            </el-table-column>
+          </el-table>
         </el-tab-pane>
       </el-tabs>
     </el-card>
