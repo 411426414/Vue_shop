@@ -110,6 +110,12 @@ export default {
       // 添加参数的表单数据对象
       addForm: {
         attr_name: ''
+      },
+      // 添加表单规则的对象
+      addFormRules: {
+        attr_name: [
+          { required: true, message: '请输入参数名称', trigger: 'blur' }
+        ]
       }
     }
   },
