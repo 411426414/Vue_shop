@@ -104,7 +104,9 @@ export default {
       // 动态参数的数据
       manyTableData: [],
       // 静态属性的数据
-      onlyTableData: []
+      onlyTableData: [],
+      // 控制添加对话框的显示或隐藏
+      addDialogVisible: false
     }
   },
   created() {
