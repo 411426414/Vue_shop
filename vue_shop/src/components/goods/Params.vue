@@ -90,6 +90,13 @@ export default {
         return true
       }
       return false
+    },
+    // 当前选中的三级分类ID
+    cateId() {
+      if (this.selectedCateKeys.length === 3) {
+        return this.selectedCateKeys[2]
+      }
+      return null
     }
   }
 }
