@@ -97,7 +97,7 @@
       </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="editDialogVisible = false">取 消</el-button>
-        <el-button type="primary">确 定</el-button
+        <el-button type="primary" @click="editParams">确 定</el-button
         >
       </span>
     </el-dialog>
@@ -221,7 +221,9 @@ export default {
     // 重置修改表单
     editDialogClosed() {
       this.$refs.editFormRef.resetFields()
-    }
+    },
+    // 点击按钮，修改参数信息
+    editParams() {}
   },
   computed: {
     // 如果按钮需要被禁用, 则返回true, 否则返回false
