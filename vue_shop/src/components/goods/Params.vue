@@ -212,6 +212,10 @@ export default {
         this.addDialogVisible = false
         this.getParamsData()
       })
+    },
+    // 点击按钮,展示修改对话框
+    showEditDialog() {
+      this.editDialogVisible = true
     }
   },
   computed: {
