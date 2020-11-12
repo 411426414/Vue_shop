@@ -163,6 +163,10 @@ export default {
       } else {
         this.onlyTableData = res.data
       }
+    },
+    // 监听添加对话框的关闭事件
+    addDialogClosed() {
+      this.$refs.addFormRef.resetFields()
     }
   },
   computed: {
