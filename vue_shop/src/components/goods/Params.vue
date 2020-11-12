@@ -89,7 +89,7 @@
       :visible.sync="editDialogVisible"
       width="50%"
     >
-      <el-form ref="editFormRef" label-width="100px">
+      <el-form :model="editForm" ref="editFormRef" label-width="100px">
         <el-form-item :label="titleText" prop="attr_name">
           <el-input v-model="editForm.attr_name"></el-input>
         </el-form-item>
@@ -135,7 +135,11 @@ export default {
         ]
       },
       // 控制修改对话框的显示或隐藏
-      editDialogVisible: false
+      editDialogVisible: false,
+      // 修改的表单数据对象
+      editForm: {
+        attr_name: ''
+      }
     }
   },
   created() {
