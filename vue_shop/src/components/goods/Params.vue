@@ -89,7 +89,7 @@
       :visible.sync="editDialogVisible"
       width="50%"
     >
-      <el-form :model="editForm" ref="editFormRef" label-width="100px">
+      <el-form :model="editForm" :rules="editFormRules" ref="editFormRef" label-width="100px">
         <el-form-item :label="titleText" prop="attr_name">
           <el-input v-model="editForm.attr_name"></el-input>
         </el-form-item>
@@ -139,6 +139,12 @@ export default {
       // 修改的表单数据对象
       editForm: {
         attr_name: ''
+      },
+      // 修改表单规则的对象
+      editFormRules: {
+        attr_name: [
+          { required: true, message: '请输入参数名称', trigger: 'blur' }
+        ]
       }
     }
   },
