@@ -179,6 +179,13 @@ export default {
         return this.selectedCateKeys[2]
       }
       return null
+    },
+    // 动态计算标题的文本
+    titleText() {
+      if (this.activeName === 'many') {
+        return '动态参数'
+      }
+      return '静态属性'
     }
   }
 }
