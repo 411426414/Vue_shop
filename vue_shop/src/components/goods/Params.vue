@@ -243,6 +243,7 @@ export default {
         }
         this.$message.success('修改参数信息成功！')
         this.getParamsData()
+        this.editDialogVisible = false
       })
     }
   },
