@@ -263,6 +263,7 @@ export default {
         return this.$message.error('删除参数信息失败！')
       }
       this.$message.success('删除参数信息成功！')
+      this.getParamsData()
     }
   },
   computed: {
