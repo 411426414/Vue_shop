@@ -229,6 +229,20 @@ export default {
     // 重置修改表单
     editDialogClosed() {
       this.$refs.editFormRef.resetFields()
+    },
+    // 点击按钮，修改参数信息
+    editParams() {
+      this.$refs.editFormRef.validate(async valid => {
+        if (!valid) return
+        const { data: res } = await this.$http.put(`categories/${this.cateId}/attributes/${this.editForm.attr_id}`, {
+          attr_name: this.editForm.attr_name,
+          attr_sel: this.editForm.attr_sel
+        })
+        if (res.meta.status !== 200) {
+          return this.$message.error('修改参数信息失败！')
+        }
+        this.$message.success('修改参数信息成功！')
+      })
     }
   },
   computed: {
