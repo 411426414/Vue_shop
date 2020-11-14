@@ -242,6 +242,7 @@ export default {
           return this.$message.error('修改参数信息失败！')
         }
         this.$message.success('修改参数信息成功！')
+        this.getParamsData()
       })
     }
   },
