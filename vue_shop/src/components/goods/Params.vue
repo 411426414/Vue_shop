@@ -253,6 +253,10 @@ export default {
         cancelButtonText: '取消',
         type: 'warning'
       }).catch(err => err)
+      // 判断用户是否取消删除的操作
+      if (confirmResult !== 'confirm') {
+        return this.$message.info('已取消删除')
+      }
     }
   },
   computed: {
