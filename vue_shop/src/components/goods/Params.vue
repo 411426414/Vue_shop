@@ -39,8 +39,8 @@
                 </el-tag>
                 <el-input
                   class="input-new-tag"
-                  v-if="inputVisible"
-                  v-model="inputValue"
+                  v-if="scope.row.inputVisible"
+                  v-model="scope.row.inputValue"
                   ref="saveTagInput"
                   size="small"
                   @keyup.enter.native="handleInputConfirm"
@@ -51,7 +51,7 @@
                   v-else
                   class="button-new-tag"
                   size="small"
-                  @click="showInput"
+                  @click="showInput(scope.row)"
                 >
                   + New Tag
                 </el-button>
