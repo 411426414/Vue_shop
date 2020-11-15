@@ -338,4 +338,7 @@ export default {
   .el-tag {
     margin: 10px;
   }
+  .input-new-tag {
+    width: 150px;
+  }
 </style>
