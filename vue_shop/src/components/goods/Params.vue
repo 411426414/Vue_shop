@@ -47,6 +47,14 @@
                   @blur="handleInputConfirm"
                 >
                 </el-input>
+                <el-button
+                  v-else
+                  class="button-new-tag"
+                  size="small"
+                  @click="showInput"
+                >
+                  + New Tag
+                </el-button>
               </template>
             </el-table-column>
             <!-- 索引列 -->
