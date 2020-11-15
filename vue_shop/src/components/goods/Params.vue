@@ -170,7 +170,9 @@ export default {
         attr_name: [
           { required: true, message: '请输入参数名称', trigger: 'blur' }
         ]
-      }
+      },
+      // 控制按钮与文本框的切换显示
+      inputVisible: false
     }
   },
   created() {
