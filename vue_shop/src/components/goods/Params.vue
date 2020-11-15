@@ -215,6 +215,8 @@ export default {
         item.attr_vals = item.attr_vals ? item.attr_vals.split(' ') : []
         // 控制文本框的显示与隐藏
         item.inputVisible = false
+        // 文本框中输入的值
+        item.inputValue = ''
       })
       console.log(res.data)
       if (this.activeName === 'many') {
