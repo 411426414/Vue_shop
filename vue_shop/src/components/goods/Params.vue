@@ -37,6 +37,16 @@
                 <el-tag v-for="item in scope.row.attr_vals" :key="item" closable>
                   {{item}}
                 </el-tag>
+                <el-input
+                  class="input-new-tag"
+                  v-if="inputVisible"
+                  v-model="inputValue"
+                  ref="saveTagInput"
+                  size="small"
+                  @keyup.enter.native="handleInputConfirm"
+                  @blur="handleInputConfirm"
+                >
+                </el-input>
               </template>
             </el-table-column>
             <!-- 索引列 -->
@@ -273,6 +283,14 @@ export default {
       }
       this.$message.success('删除参数信息成功！')
       this.getParamsData()
+    },
+    // 文本框失去焦点，或摁下了 Enter 都会触发
+    handleInputConfirm() {
+      console.log('ok')
+    },
+    // 点击按钮显示文本输入框
+    showInput() {
+      this.inputVisible = true
     }
   },
   computed: {
