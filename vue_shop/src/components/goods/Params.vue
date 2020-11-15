@@ -170,11 +170,7 @@ export default {
         attr_name: [
           { required: true, message: '请输入参数名称', trigger: 'blur' }
         ]
-      },
-      // 控制按钮与文本框的切换显示
-      inputVisible: false,
-      // 文本框输入的内容
-      inputValue: ''
+      }
     }
   },
   created() {
@@ -301,8 +297,8 @@ export default {
       console.log('ok')
     },
     // 点击按钮显示文本输入框
-    showInput() {
-      this.inputVisible = true
+    showInput(row) {
+      row.inputVisible = true
     }
   },
   computed: {
