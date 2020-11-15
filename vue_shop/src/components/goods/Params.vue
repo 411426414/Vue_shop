@@ -172,7 +172,9 @@ export default {
         ]
       },
       // 控制按钮与文本框的切换显示
-      inputVisible: false
+      inputVisible: false,
+      // 文本框输入的内容
+      inputValue: ''
     }
   },
   created() {
