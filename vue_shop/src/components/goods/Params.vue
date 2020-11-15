@@ -32,7 +32,13 @@
           <!-- 动态参数表格 -->
           <el-table :data="manyTableData" border stripe>
             <!-- 展开行 -->
-            <el-table-column type="expand"></el-table-column>
+            <el-table-column type="expand">
+              <template slot-scope="scope">
+                <el-tag v-for="item in scope.row.attr_vals" :key="item" closable=>
+                  {{item}}
+                </el-tag>
+              </template>
+            </el-table-column>
             <!-- 索引列 -->
             <el-table-column type="index"></el-table-column>
             <el-table-column label="参数名称" prop="attr_name"></el-table-column>
@@ -298,5 +304,8 @@ export default {
 <style lang="less" scoped>
   .cat_opt {
     margin: 15px 0;
+  }
+  .el-tag {
+    margin: 10px;
   }
 </style>
