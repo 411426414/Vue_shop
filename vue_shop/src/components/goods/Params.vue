@@ -34,7 +34,7 @@
             <!-- 展开行 -->
             <el-table-column type="expand">
               <template slot-scope="scope">
-                <el-tag v-for="item in scope.row.attr_vals" :key="item" closable=>
+                <el-tag v-for="item in scope.row.attr_vals" :key="item" closable>
                   {{item}}
                 </el-tag>
               </template>
@@ -194,7 +194,7 @@ export default {
         return this.$message.error('获取参数列表失败！')
       }
       res.data.forEach(item => {
-        item.attr_vals = item.attr_vals.split(' ')
+        item.attr_vals = item.attr_vals ? item.attr_vals.split(' ') : []
       })
       console.log(res.data)
       if (this.activeName === 'many') {
