@@ -213,6 +213,8 @@ export default {
       }
       res.data.forEach(item => {
         item.attr_vals = item.attr_vals ? item.attr_vals.split(' ') : []
+        // 控制文本框的显示与隐藏
+        item.inputVisible = false
       })
       console.log(res.data)
       if (this.activeName === 'many') {
