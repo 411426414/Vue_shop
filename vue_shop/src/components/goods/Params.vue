@@ -307,7 +307,9 @@ export default {
       row.attr_vals.push(row.inputValue.trim())
       row.inputValue = ''
       row.inputVisible = false
-      // 需要发起请求，保存这次操作
+    },
+    // 将 attr_vals 的操作，保存到数据库
+    async saveAttrVals(row) {
       const { data: res } = await this.$http.put(
         `categories/${this.cateId}/attributes/${row.attr_id}`, {
           attr_name: row.attr_name,
