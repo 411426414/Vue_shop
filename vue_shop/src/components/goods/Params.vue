@@ -303,6 +303,10 @@ export default {
         row.inputVisible = false
         return true
       }
+      // 如果没有 return,则证明输入的内容，需要做后续操作
+      row.attr_vals.push(row.inputValue.trim())
+      row.inputValue = ''
+      row.inputVisible = false
     },
     // 点击按钮显示文本输入框
     showInput(row) {
