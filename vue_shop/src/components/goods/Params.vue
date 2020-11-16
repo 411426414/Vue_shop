@@ -298,8 +298,11 @@ export default {
     },
     // 文本框失去焦点，或摁下了 Enter 都会触发
     handleInputConfirm(row) {
-      console.log('ok')
-      row.inputVisible = false
+      if (row.inputValue.trim().length === 0) {
+        row.inputValue = ''
+        row.inputVisible = false
+        return true
+      }
     },
     // 点击按钮显示文本输入框
     showInput(row) {
