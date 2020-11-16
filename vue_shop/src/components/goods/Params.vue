@@ -34,7 +34,7 @@
             <!-- 展开行 -->
             <el-table-column type="expand">
               <template slot-scope="scope">
-                <el-tag v-for="item in scope.row.attr_vals" :key="item" closable>
+                <el-tag v-for="(item, i) in scope.row.attr_vals" :key="item" closable @close="handleClose(i, scope.row)">
                   {{item}}
                 </el-tag>
                 <el-input
@@ -331,6 +331,12 @@ export default {
       this.$nextTick(_ => {
         this.$refs.saveTagInput.$refs.input.focus()
       })
+    },
+    // 删除对应的参数可选项
+    handleClose(i, row) {
+      row.attr_vals.splice(i, 1)
+      // 需要发起请求，保存这次操作
+      this.saveAttrVals(row)
     }
   },
   computed: {
