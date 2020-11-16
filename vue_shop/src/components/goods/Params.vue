@@ -307,6 +307,8 @@ export default {
       row.attr_vals.push(row.inputValue.trim())
       row.inputValue = ''
       row.inputVisible = false
+      // 需要发起请求，保存这次操作
+      this.saveAttrVals(row)
     },
     // 将 attr_vals 的操作，保存到数据库
     async saveAttrVals(row) {
