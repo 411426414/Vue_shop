@@ -303,6 +303,10 @@ export default {
     // 点击按钮显示文本输入框
     showInput(row) {
       row.inputVisible = true
+      // 让文本框自动获得焦点
+      this.$nextTick(_ => {
+        this.$refs.saveTagInput.$refs.input.focus()
+      })
     }
   },
   computed: {
