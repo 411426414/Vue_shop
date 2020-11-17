@@ -8,6 +8,11 @@
     </el-breadcrumb>
     <!-- 卡片视图 -->
     <el-card>
+      <el-row :gutter="20">
+        <el-col :span="8">
+          <el-input placeholder="请输入内容"></el-input>
+        </el-col>
+      </el-row>
     </el-card>
   </div>
 </template>
