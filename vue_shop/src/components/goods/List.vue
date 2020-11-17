@@ -31,7 +31,9 @@ export default {
         query: '',
         pagenum: 1,
         pagesize: 10
-      }
+      },
+      // 商品列表
+      goodsList: []
     }
   },
   created() {},
