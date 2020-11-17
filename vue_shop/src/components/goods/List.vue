@@ -24,7 +24,16 @@
 
 <script>
 export default {
-  data() {},
+  data() {
+    return {
+      // 查询参数对象
+      queryInfo: {
+        query: '',
+        pagenum: 1,
+        pagesize: 10
+      }
+    }
+  },
   created() {},
   methods: {}
 }
