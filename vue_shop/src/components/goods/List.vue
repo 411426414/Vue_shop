@@ -38,7 +38,9 @@ export default {
       total: 0
     }
   },
-  created() {},
+  created() {
+    this.getGoodsList()
+  },
   methods: {
     // 根据分页获取对应的商品列表
     async getGoodsList() {
