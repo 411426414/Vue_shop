@@ -33,7 +33,9 @@ export default {
         pagesize: 10
       },
       // 商品列表
-      goodsList: []
+      goodsList: [],
+      // 总数据条数
+      total: 0
     }
   },
   created() {},
