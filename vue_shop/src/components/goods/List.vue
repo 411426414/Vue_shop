@@ -39,7 +39,19 @@ export default {
     }
   },
   created() {},
-  methods: {}
+  methods: {
+    // 根据分页获取对应的商品列表
+    async getGoodsList() {
+      const { data: res } = await this.$http.get('goods', {
+        params: this.queryInfo
+      })
+      if (res.meta.status !== 200) {
+        return this.$message.error('获取商品列表失败')
+      }
+      this.$message.success('获取商品列表成功')
+      console.log(res.data)
+    }
+  }
 }
 </script>
 
