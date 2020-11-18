@@ -22,7 +22,7 @@ Vue.config.productionTip = false
 // 注册全局组件
 Vue.component('tree-table', TreeTable)
 
-// 自定义组件，优化时间
+// 自定义过滤器,优化时间
 Vue.filter('dateFormat', function(originval) {
   const dt = new Date(originval)
   const y = dt.getFullYear()
