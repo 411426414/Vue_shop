@@ -18,7 +18,7 @@
           <el-button type="primary">添加商品</el-button>
         </el-col>
       </el-row>
-      <el-table :data='goodsList' border>
+      <el-table :data='goodsList' stripe border>
       </el-table>
     </el-card>
   </div>
