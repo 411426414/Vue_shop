@@ -22,6 +22,18 @@ Vue.config.productionTip = false
 // 注册全局组件
 Vue.component('tree-table', TreeTable)
 
+// 自定义组件，优化时间
+Vue.filter('dateFormat', function(originval) {
+  const dt = new Date(originval)
+  const y = dt.getFullYear()
+  const m = (dt.getMonth() + 1 + '').padStart(2, '0')
+  const d = (dt.getDate() + 1 + '').padStart(2, '0')
+  const hh = (dt.getHours() + 1 + '').padStart(2, '0')
+  const mm = (dt.getMinutes() + 1 + '').padStart(2, '0')
+  const ss = (dt.getSeconds() + 1 + '').padStart(2, '0')
+  return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+})
+
 new Vue({
   router,
   render: h => h(App)
