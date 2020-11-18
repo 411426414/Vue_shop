@@ -20,6 +20,11 @@
       </el-row>
       <el-table :data='goodsList' border stripe>
         <el-table-column type="index"></el-table-column>
+        <el-table-column label="商品名称" prop="goods_name"></el-table-column>
+        <el-table-column label="商品价格(元)" prop="goods_price"></el-table-column>
+        <el-table-column label="商品重量" prop="goods_weight"></el-table-column>
+        <el-table-column label="创建时间" prop="add_time"></el-table-column>
+        <el-table-column label="操作"></el-table-column>
       </el-table>
     </el-card>
   </div>
