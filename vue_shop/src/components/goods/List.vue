@@ -26,8 +26,8 @@
         <el-table-column label="创建时间" prop="add_time"></el-table-column>
         <el-table-column label="操作">
           <template>
-            <el-button type="primary" icon="el-icon-edit"></el-button>
-            <el-button type="danger" icon="el-icon-delete"></el-button>
+            <el-button type="primary" icon="el-icon-edit" size="mini"></el-button>
+            <el-button type="danger" icon="el-icon-delete" size="mini"></el-button>
           </template>
         </el-table-column>
       </el-table>
