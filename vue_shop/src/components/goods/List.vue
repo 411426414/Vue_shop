@@ -35,6 +35,12 @@
           </template>
         </el-table-column>
       </el-table>
+
+      <!-- 分页区域 -->
+      <el-pagination
+        layout="total, sizes, prev, pager, next, jumper"
+      >
+      </el-pagination>
     </el-card>
   </div>
 </template>
