@@ -40,6 +40,7 @@
       <el-pagination
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
+        :current-page="queryInfo.pagenum"
         layout="total, sizes, prev, pager, next, jumper"
       >
       </el-pagination>
