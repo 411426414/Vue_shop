@@ -39,6 +39,7 @@
       <!-- 分页区域 -->
       <el-pagination
         @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
         layout="total, sizes, prev, pager, next, jumper"
       >
       </el-pagination>
@@ -81,6 +82,10 @@ export default {
     },
     handleSizeChange(newSize) {
       this.queryInfo.pagesize = newSize
+      this.getGoodsList()
+    },
+    handleCurrentChange(newPage) {
+      this.queryInfo.pagenum = newPage
       this.getGoodsList()
     }
   }
