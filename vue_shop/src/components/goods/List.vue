@@ -38,6 +38,7 @@
 
       <!-- 分页区域 -->
       <el-pagination
+        @size-change="handleSizeChange"
         layout="total, sizes, prev, pager, next, jumper"
       >
       </el-pagination>
@@ -77,6 +78,10 @@ export default {
       console.log(res.data)
       this.goodsList = res.data.goods
       this.total = res.data.total
+    },
+    handleSizeChange(newSize) {
+      this.queryInfo.pagesize = newSize
+      this.getGoodsList()
     }
   }
 }
