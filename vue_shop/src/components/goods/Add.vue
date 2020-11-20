@@ -6,6 +6,18 @@
       <el-breadcrumb-item>商品管理</el-breadcrumb-item>
       <el-breadcrumb-item>添加商品</el-breadcrumb-item>
     </el-breadcrumb>
+    <!-- 卡片视图 -->
+    <el-card>
+      <!-- Alert警告: 用于页面中展示重要的提示信息 -->
+      <el-alert
+        title="添加商品信息"
+        type="info"
+        center
+        show-icon
+        :closable="false"
+      >
+      </el-alert>
+    </el-card>
   </div>
 </template>
 
