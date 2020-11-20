@@ -107,6 +107,7 @@ export default {
         return this.$message.error('删除失败！')
       }
       this.$message.success('删除成功！')
+      this.getGoodsList()
     }
   }
 }
