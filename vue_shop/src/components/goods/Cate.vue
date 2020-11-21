@@ -228,7 +228,9 @@ export default {
     },
     // 获取父级分类的数据列表
     async getParentCateList() {
-      const { data: res } = await this.$http.get('categories', { param: { type: 2 } })
+      const { data: res } = await this.$http.get('categories', {
+        param: { type: 2 }
+      })
       if (res.meta.status !== 200) {
         return this.$message.error('获取父级分类数据列表失败！')
       }
