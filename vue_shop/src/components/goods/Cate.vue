@@ -287,7 +287,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.treeTable{
+.treeTable {
   margin-top: 15px;
 }
 .el-cascader {
