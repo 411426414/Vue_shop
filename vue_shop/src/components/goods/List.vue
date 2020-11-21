@@ -16,7 +16,12 @@
             clearable
             @clear="getGoodsList"
           >
-            <el-button slot="append" icon="el-icon-search" @click="getGoodsList"></el-button>
+            <el-button
+              slot="append"
+              icon="el-icon-search"
+              @click="getGoodsList"
+            >
+            </el-button>
           </el-input>
         </el-col>
         <el-col :span="4">
