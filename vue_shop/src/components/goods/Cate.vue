@@ -89,7 +89,7 @@
         <el-form-item label="分类名称:" prop="cat_name">
           <el-input v-model="addCateForm.cat_name"></el-input>
         </el-form-item>
-        <el-form-item label="分类分类:" >
+        <el-form-item label="父级分类:" >
           <!--
             expandTrigger: 次级菜单的展开方式
             options: 用来指定数据源
