@@ -15,7 +15,10 @@
       >
         <!-- 用户名 -->
         <el-form-item prop="username">
-          <el-input v-model="loginForm.username" prefix-icon="el-icon-search"></el-input>
+          <el-input
+            v-model="loginForm.username"
+            prefix-icon="el-icon-search"
+          ></el-input>
         </el-form-item>
         <!-- 密码 -->
         <el-form-item prop="password">
