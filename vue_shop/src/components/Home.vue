@@ -25,7 +25,11 @@
           active-text-color="#409EFF"
         >
           <!-- 一级菜单 index只接受字符串-->
-          <el-submenu :index="item.id + ''" v-for="item in menuList" :key='item.id'>
+          <el-submenu
+            :index="item.id + ''"
+            v-for="item in menuList"
+            :key="item.id"
+          >
             <!-- 一级菜单的模板区域 -->
             <template slot="title">
               <!-- 图标 -->
