@@ -91,46 +91,46 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  .login_container{
-    background-color: #2B4B6B;
+  .login_container {
+    background-color: #2b4b6b;
     height: 100%;
   }
-  .login_box{
+  .login_box {
     width: 450px;
     height: 300px;
-    background-color: #FFF;
+    background-color: #fff;
     border-radius: 3px;
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
-    .avatar_box{
+    transform: translate(-50%, -50%);
+    .avatar_box {
       width: 130px;
       height: 130px;
       padding: 10px;
       border-radius: 50%;
-      border: 1px solid #EEE;
-      box-shadow: 0 0 10px #DDD;
+      border: 1px solid #eee;
+      box-shadow: 0 0 10px #ddd;
       position: absolute;
       left: 50%;
-      transform: translate(-50%,-50%);
-      background-color: #FFF;
-      img{
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      img {
         width: 100%;
         height: 100%;
         border-radius: 50%;
-        background-color: #EEE;
+        background-color: #eee;
       }
     }
   }
-  .login_form{
+  .login_form {
     position: absolute;
     bottom: 0;
     width: 100%;
     padding: 0 20px;
-    box-sizing: border-box
+    box-sizing: border-box;
   }
-  .btns{
+  .btns {
     display: flex;
     justify-content: flex-end;
   }
