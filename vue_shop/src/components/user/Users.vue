@@ -51,7 +51,13 @@
         <el-table-column label="操作" width='180px'>
           <template slot-scope="scope">
             <!-- 修改按钮 -->
-            <el-button @click="showEditDialog(scope.row.id)" type='primary' size='mini' icon='el-icon-edit'></el-button>
+            <el-button
+              @click="showEditDialog(scope.row.id)"
+              type="primary"
+              size="mini"
+              icon="el-icon-edit"
+            >
+            </el-button>
             <!-- 删除按钮 -->
             <el-button type='danger' size='mini' icon='el-icon-delete' @click="removeUserById(scope.row.id)"></el-button>
             <!-- 分配角色 -->
