@@ -22,7 +22,11 @@
         </el-form-item>
         <!-- 密码 -->
         <el-form-item prop="password">
-          <el-input v-model="loginForm.password" prefix-icon="el-icon-search" type="password"></el-input>
+          <el-input
+            v-model="loginForm.password"
+            prefix-icon="el-icon-search"
+            type="password"
+          ></el-input>
         </el-form-item>
         <!-- 按钮区域 -->
         <el-form-item class="btns">
