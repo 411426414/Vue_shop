@@ -20,7 +20,7 @@
       <!-- Steps 步骤条： 含状态步骤条 -->
       <el-steps
         :space="200"
-        :active="activeIndex"
+        :active="activeIndex - 0"
         finish-status="success"
         align-center
       >
