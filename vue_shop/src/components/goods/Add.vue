@@ -42,9 +42,21 @@
         <el-tabs
           v-model="activeIndex"
           tab-position="left"
-          style="height: 200px"
         >
-          <el-tab-pane name="0" label="基本信息">基本信息</el-tab-pane>
+          <el-tab-pane name="0" label="基本信息">
+            <el-form-item label="商品名称" prop="goods_name">
+              <el-input v-model="addForm.goods_name"></el-input>
+            </el-form-item>
+            <el-form-item label="商品价格" prop="goods_price">
+              <el-input v-model="addForm.goods_price" type="number"></el-input>
+            </el-form-item>
+            <el-form-item label="商品重量" prop="goods_weight">
+              <el-input v-model="addForm.goods_weight" type="number"></el-input>
+            </el-form-item>
+            <el-form-item label="商品数量" prop="goods_number">
+              <el-input v-model="addForm.goods_number" type="number"></el-input>
+            </el-form-item>
+          </el-tab-pane>
           <el-tab-pane name="1" label="商品参数">商品参数</el-tab-pane>
           <el-tab-pane name="2" label="商品属性">商品属性</el-tab-pane>
           <el-tab-pane name="3" label="商品图片">商品图片</el-tab-pane>
@@ -61,7 +73,12 @@ export default {
     return {
       activeIndex: '0',
       // 添加商品的表单对象
-      addForm: {},
+      addForm: {
+        goods_name: '',
+        goods_price: 0,
+        goods_weight: 0,
+        goods_number: 0
+      },
       addFormRules: {}
     }
   },
