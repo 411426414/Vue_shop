@@ -92,11 +92,26 @@ export default {
         goods_number: [
           { required: true, message: '请输入商品数量', trigger: 'blur' }
         ]
-      }
+      },
+      // 商品分类列表
+      cateList: []
     }
   },
-  created() {},
-  methods: {}
+  created() {
+    this.getCateList()
+  },
+  methods: {
+    async getCateList() {
+      const { data: res } = await this.$http.get('/categories')
+      if (res.meta.status !== 200) {
+        return this.$message.error('获取商品分类数据列表失败！')
+      }
+      this.$message.success('获取商品分类数据列表成功！')
+      // 把数据列表赋值给catelist
+      this.cateList = res.data
+      console.log(this.cateList)
+    }
+  }
 }
 </script>
 
