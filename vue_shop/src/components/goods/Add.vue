@@ -18,7 +18,7 @@
       >
       </el-alert>
       <!-- Steps 步骤条： 含状态步骤条 -->
-      <el-steps :space="200" :active="1" finish-status="success">
+      <el-steps :space="200" :active="1" finish-status="success" align-center>
         <el-step title="基本信息"></el-step>
         <el-step title="商品参数"></el-step>
         <el-step title="商品属性"></el-step>
