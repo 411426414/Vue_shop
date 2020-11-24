@@ -18,31 +18,39 @@
       >
       </el-alert>
       <!-- Steps 步骤条： 含状态步骤条 -->
-      <el-steps
-        :space="200"
-        :active="activeIndex - 0"
-        finish-status="success"
-        align-center
+      <el-form
+        :model="addForm"
+        :rules="addFormRules"
+        ref="addFormRef"
+        label-width="100px"
+        label-position="top"
       >
-        <el-step title="基本信息"></el-step>
-        <el-step title="商品参数"></el-step>
-        <el-step title="商品属性"></el-step>
-        <el-step title="商品图片"></el-step>
-        <el-step title="商品内容"></el-step>
-        <el-step title="完成"></el-step>
-      </el-steps>
-      <!-- tab栏区域 -->
-      <el-tabs
-        v-model="activeIndex"
-        tab-position="left"
-        style="height: 200px"
-      >
-        <el-tab-pane name="0" label="基本信息">基本信息</el-tab-pane>
-        <el-tab-pane name="1" label="商品参数">商品参数</el-tab-pane>
-        <el-tab-pane name="2" label="商品属性">商品属性</el-tab-pane>
-        <el-tab-pane name="3" label="商品图片">商品图片</el-tab-pane>
-        <el-tab-pane name="4" label="商品内容">商品内容</el-tab-pane>
-      </el-tabs>
+        <el-steps
+          :space="200"
+          :active="activeIndex - 0"
+          finish-status="success"
+          align-center
+        >
+          <el-step title="基本信息"></el-step>
+          <el-step title="商品参数"></el-step>
+          <el-step title="商品属性"></el-step>
+          <el-step title="商品图片"></el-step>
+          <el-step title="商品内容"></el-step>
+          <el-step title="完成"></el-step>
+        </el-steps>
+        <!-- tab栏区域 -->
+        <el-tabs
+          v-model="activeIndex"
+          tab-position="left"
+          style="height: 200px"
+        >
+          <el-tab-pane name="0" label="基本信息">基本信息</el-tab-pane>
+          <el-tab-pane name="1" label="商品参数">商品参数</el-tab-pane>
+          <el-tab-pane name="2" label="商品属性">商品属性</el-tab-pane>
+          <el-tab-pane name="3" label="商品图片">商品图片</el-tab-pane>
+          <el-tab-pane name="4" label="商品内容">商品内容</el-tab-pane>
+        </el-tabs>
+      </el-form>
     </el-card>
   </div>
 </template>
@@ -52,10 +60,13 @@ export default {
   data() {
     return {
       activeIndex: '0',
+      // 添加商品的表单对象
+      addForm: {},
+      addFormRules: {}
     }
   },
   created() {},
-  methods: {},
+  methods: {}
 }
 </script>
 
