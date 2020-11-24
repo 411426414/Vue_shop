@@ -18,7 +18,7 @@
       >
       </el-alert>
       <!-- Steps 步骤条： 含状态步骤条 -->
-      <el-steps :space="200" :active="1" finish-status="success" align-center>
+      <el-steps :space="200" :active="activeIndex" finish-status="success" align-center>
         <el-step title="基本信息"></el-step>
         <el-step title="商品参数"></el-step>
         <el-step title="商品属性"></el-step>
@@ -33,7 +33,9 @@
 <script>
 export default {
   data() {
-    return {}
+    return {
+      activeIndex: 0
+    }
   },
   created() {},
   methods: {}
