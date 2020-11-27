@@ -39,8 +39,14 @@
           <el-step title="完成"></el-step>
         </el-steps>
         <!-- tab栏区域 -->
-        <el-tabs v-model="activeIndex" tab-position="left" :before-leave="beforeTabLeave">
+        <el-tabs
+          v-model="activeIndex"
+          tab-position="left"
+          :before-leave="beforeTabLeave"
+          @tab-click="tabClicked"
+        >
           <!-- 切换标签之前的钩子，若返回 false 或者返回 Promise 且被 reject，则阻止切换。 -->
+          <!-- tab-click：tab 被选中时触发 -->
           <el-tab-pane name="0" label="基本信息">
             <el-form-item label="商品名称" prop="goods_name">
               <el-input v-model="addForm.goods_name"></el-input>
@@ -111,8 +117,10 @@ export default {
       cateProps: {
         label: 'cat_name', // 指定选项标签为选项对象的某个属性值
         value: 'cat_id', // 指定选项的值为选项对象的某个属性值
-        children: 'children' // 指定选项的子选项为选项对象的某个属性值
-      }
+        children: 'children', // 指定选项的子选项为选项对象的某个属性值
+      },
+      // 动态参数列表数据
+      manyTableData: []
     }
   },
   created() {
@@ -145,6 +153,9 @@ export default {
         this.$message.error('请先选择商品分类！')
         return false
       }
+    },
+    tabClicked() {
+      console.log(this.activeIndex)
     }
   }
 }
