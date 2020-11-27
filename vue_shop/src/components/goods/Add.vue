@@ -158,9 +158,7 @@ export default {
       // console.log(this.activeIndex)
       // 证明访问的是动态参数面板
       if (this.activeIndex === '1') {
-        const {
-          data: res
-        } = await this.$http.get(`categories/${this.addForm.goods_cat[2]}/attributes`, {
+        const { data: res } = await this.$http.get(`categories/${this.cateId}/attributes`, {
           params: { sel: 'many' }
         })
         if (res.meta.status !== 200) {
@@ -169,6 +167,14 @@ export default {
         console.log(res.data)
         this.manyTableData = res.data
       }
+    }
+  },
+  computed: {
+    cateId() {
+      if (this.addForm.goods_cat.length === 3) {
+        return this.addForm.goods_cat[2]
+      }
+      return null
     }
   }
 }
