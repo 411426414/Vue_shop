@@ -57,6 +57,7 @@
               <el-cascader
                 expandTrigger="hover"
                 v-model="addForm.goods_cat"
+                :options="cateList"
                 :props="cateProps"
               >
               </el-cascader>
