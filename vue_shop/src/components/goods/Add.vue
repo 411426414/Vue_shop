@@ -59,6 +59,7 @@
                 v-model="addForm.goods_cat"
                 :options="cateList"
                 :props="cateProps"
+                @change="handleChange"
               >
               </el-cascader>
             </el-form-item>
@@ -127,6 +128,10 @@ export default {
       // 把数据列表赋值给catelist
       this.cateList = res.data
       console.log(this.cateList)
+    },
+    // 级联选择器选中项变化，会触发这个函数
+    handleChange() {
+      console.log(this.addForm.goods_cat)
     }
   }
 }
