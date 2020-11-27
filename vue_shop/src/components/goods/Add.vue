@@ -39,7 +39,8 @@
           <el-step title="完成"></el-step>
         </el-steps>
         <!-- tab栏区域 -->
-        <el-tabs v-model="activeIndex" tab-position="left">
+        <el-tabs v-model="activeIndex" tab-position="left" :before-leave="beforeTabLeave">
+          <!-- 切换标签之前的钩子，若返回 false 或者返回 Promise 且被 reject，则阻止切换。 -->
           <el-tab-pane name="0" label="基本信息">
             <el-form-item label="商品名称" prop="goods_name">
               <el-input v-model="addForm.goods_name"></el-input>
@@ -132,7 +133,7 @@ export default {
     // 级联选择器选中项变化，会触发这个函数
     handleChange() {
       console.log(this.addForm.goods_cat)
-      if (this.addForm.goods_cat !== 3) {
+      if (this.addForm.goods_cat.length !== 3) {
         this.addForm.goods_cat = []
       }
     }
