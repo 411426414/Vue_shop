@@ -136,6 +136,15 @@ export default {
       if (this.addForm.goods_cat.length !== 3) {
         this.addForm.goods_cat = []
       }
+    },
+    beforeTabLeave(activeName, oldActiveName) {
+      // console.log('即将离开的标签页名字：' + oldActiveName)
+      // console.log('即将进入的标签页名字：' + activeName)
+      // return false
+      if (oldActiveName === '0' && this.addForm.goods_cat.length !== 3) {
+        this.$message.error('请先选择商品分类！')
+        return false
+      }
     }
   }
 }
