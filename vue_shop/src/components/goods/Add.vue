@@ -117,7 +117,7 @@ export default {
       cateProps: {
         label: 'cat_name', // 指定选项标签为选项对象的某个属性值
         value: 'cat_id', // 指定选项的值为选项对象的某个属性值
-        children: 'children', // 指定选项的子选项为选项对象的某个属性值
+        children: 'children' // 指定选项的子选项为选项对象的某个属性值
       },
       // 动态参数列表数据
       manyTableData: []
@@ -154,8 +154,21 @@ export default {
         return false
       }
     },
-    tabClicked() {
-      console.log(this.activeIndex)
+    async tabClicked() {
+      // console.log(this.activeIndex)
+      // 证明访问的是动态参数面板
+      if (this.activeIndex === '1') {
+        const {
+          data: res
+        } = await this.$http.get(`categories/${this.addForm.goods_cat[2]}/attributes`, {
+          params: { sel: 'many' }
+        })
+        if (res.meta.status !== 200) {
+          return this.$message.error('获取动态参数列表失败！')
+        }
+        console.log(res.data)
+        this.manyTableData = res.data
+      }
     }
   }
 }
