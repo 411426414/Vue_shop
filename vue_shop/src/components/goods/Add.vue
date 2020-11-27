@@ -53,6 +53,13 @@
             <el-form-item label="商品数量" prop="goods_number">
               <el-input v-model="addForm.goods_number" type="number"></el-input>
             </el-form-item>
+            <el-form-item label="商品分类">
+              <el-cascader
+                expandTrigger="hover"
+                v-model="addForm.goods_cat"
+              >
+              </el-cascader>
+            </el-form-item>
           </el-tab-pane>
           <el-tab-pane name="1" label="商品参数">商品参数</el-tab-pane>
           <el-tab-pane name="2" label="商品属性">商品属性</el-tab-pane>
@@ -74,7 +81,9 @@ export default {
         goods_name: '',
         goods_price: 0,
         goods_weight: 0,
-        goods_number: 0
+        goods_number: 0,
+        // 商品所属的分类数组
+        goods_cat: []
       },
       addFormRules: {
         goods_name: [
