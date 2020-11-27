@@ -57,6 +57,7 @@
               <el-cascader
                 expandTrigger="hover"
                 v-model="addForm.goods_cat"
+                :props="cateProps"
               >
               </el-cascader>
             </el-form-item>
@@ -103,7 +104,12 @@ export default {
         ]
       },
       // 商品分类列表
-      cateList: []
+      cateList: [],
+      cateProps: {
+        label: 'cat_name', // 指定选项标签为选项对象的某个属性值
+        value: 'cat_id', // 指定选项的值为选项对象的某个属性值
+        children: 'children' // 指定选项的子选项为选项对象的某个属性值
+      }
     }
   },
   created() {
