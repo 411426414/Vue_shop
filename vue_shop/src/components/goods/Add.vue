@@ -157,6 +157,8 @@ export default {
     async tabClicked() {
       // console.log(this.activeIndex)
       // 证明访问的是动态参数面板
+
+      // 获取动态参数列表
       if (this.activeIndex === '1') {
         const { data: res } = await this.$http.get(`categories/${this.cateId}/attributes`, {
           params: { sel: 'many' }
