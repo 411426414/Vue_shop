@@ -53,7 +53,7 @@
             <el-form-item label="商品数量" prop="goods_number">
               <el-input v-model="addForm.goods_number" type="number"></el-input>
             </el-form-item>
-            <el-form-item label="商品分类">
+            <el-form-item label="商品分类" prop="goods_cat">
               <el-cascader
                 expandTrigger="hover"
                 v-model="addForm.goods_cat"
@@ -97,6 +97,9 @@ export default {
         ],
         goods_number: [
           { required: true, message: '请输入商品数量', trigger: 'blur' }
+        ],
+        goods_cat: [
+          { required: true, message: '请选择商品分类', trigger: 'blur' }
         ]
       },
       // 商品分类列表
