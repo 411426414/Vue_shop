@@ -39,10 +39,7 @@
           <el-step title="完成"></el-step>
         </el-steps>
         <!-- tab栏区域 -->
-        <el-tabs
-          v-model="activeIndex"
-          tab-position="left"
-        >
+        <el-tabs v-model="activeIndex" tab-position="left">
           <el-tab-pane name="0" label="基本信息">
             <el-form-item label="商品名称" prop="goods_name">
               <el-input v-model="addForm.goods_name"></el-input>
