@@ -78,6 +78,9 @@
               v-for="item in manyTableData"
               :key="item.attr_name"
             >
+              <el-checkbox-group v-model="item.attr_vals">
+                <el-checkbox border :label="cb" v-for="(cb, i) in item.attr_vals" :key="i"></el-checkbox>
+              </el-checkbox-group>
             </el-form-item>
           </el-tab-pane>
           <el-tab-pane name="2" label="商品属性">商品属性</el-tab-pane>
