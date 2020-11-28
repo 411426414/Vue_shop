@@ -92,7 +92,13 @@
             <el-input v-model="item.attr_vals"></el-input>
             </el-form-item>
           </el-tab-pane>
-          <el-tab-pane name="3" label="商品图片">商品图片</el-tab-pane>
+          <el-tab-pane name="3" label="商品图片">
+            <el-upload
+              list-type="picture"
+            >
+              <el-button size="small" type="primary">点击上传</el-button>
+            </el-upload>
+          </el-tab-pane>
           <el-tab-pane name="4" label="商品内容">商品内容</el-tab-pane>
         </el-tabs>
       </el-form>
