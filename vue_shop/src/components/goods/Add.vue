@@ -131,7 +131,9 @@ export default {
         children: 'children' // 指定选项的子选项为选项对象的某个属性值
       },
       // 动态参数列表数据
-      manyTableData: []
+      manyTableData: [],
+      // 静态列表数据
+      onlyTableData: []
     }
   },
   created() {
@@ -182,6 +184,17 @@ export default {
           item.attr_vals = item.attr_vals.length === 0 ? [] : item.attr_vals.split(' ')
         })
         this.manyTableData = res.data
+      }
+      // 获取商品属性
+      if (this.activeIndex === '2') {
+        const { data: res } = await this.$http.get(`categories/${this.cateId}/attributes`, {
+          params: { sel: 'only' }
+        })
+        if (res.meta.status !== 200) {
+          return this.$message.error('获取静态参数列表失败！')
+        }
+        console.log(res.data)
+        this.onlyTableData = res.data
       }
     }
   },
