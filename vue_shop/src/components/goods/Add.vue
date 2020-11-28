@@ -93,6 +93,9 @@
             </el-form-item>
           </el-tab-pane>
           <el-tab-pane name="3" label="商品图片">
+              <!--
+                action:表示图片要上传到的后台API地址
+              -->
             <el-upload
               list-type="picture"
             >
@@ -147,7 +150,9 @@ export default {
       // 动态参数列表数据
       manyTableData: [],
       // 静态列表数据
-      onlyTableData: []
+      onlyTableData: [],
+      // 上传图片的URL地址
+      uploadUrl: 'http://127.0.0.1:8888/api/private/v1/upload'
     }
   },
   created() {
