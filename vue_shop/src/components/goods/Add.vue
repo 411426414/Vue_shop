@@ -97,6 +97,8 @@
                 action:表示图片要上传到的后台API地址
               -->
             <el-upload
+              :action="uploadUrl"
+              :on-preview="handlePreview"
               list-type="picture"
             >
               <el-button size="small" type="primary">点击上传</el-button>
@@ -215,7 +217,9 @@ export default {
         console.log(res.data)
         this.onlyTableData = res.data
       }
-    }
+    },
+    // 处理图片预览效果
+    handlePreview() {}
   },
   computed: {
     cateId() {
