@@ -96,10 +96,12 @@
               <!--
                 action:表示图片要上传到的后台API地址
                 on-preview: 点击文件列表中已上传的文件时的钩子
+                on-remove：文件列表移除文件时的钩子
               -->
             <el-upload
               :action="uploadUrl"
               :on-preview="handlePreview"
+              :on-remove="handleRemove"
               list-type="picture"
             >
               <el-button size="small" type="primary">点击上传</el-button>
@@ -220,7 +222,9 @@ export default {
       }
     },
     // 处理图片预览效果
-    handlePreview() {}
+    handlePreview() {},
+    // 处理移除图片的操作
+    handleRemove() {}
   },
   computed: {
     cateId() {
