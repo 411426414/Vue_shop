@@ -71,7 +71,15 @@
               </el-cascader>
             </el-form-item>
           </el-tab-pane>
-          <el-tab-pane name="1" label="商品参数">商品参数</el-tab-pane>
+          <el-tab-pane name="1" label="商品参数">
+          <!-- 渲染表单的item项 -->
+            <el-form-item
+              :label="item.attr_name"
+              v-for="item in manyTableData"
+              :key="item.attr_name"
+            >
+            </el-form-item>
+          </el-tab-pane>
           <el-tab-pane name="2" label="商品属性">商品属性</el-tab-pane>
           <el-tab-pane name="3" label="商品图片">商品图片</el-tab-pane>
           <el-tab-pane name="4" label="商品内容">商品内容</el-tab-pane>
