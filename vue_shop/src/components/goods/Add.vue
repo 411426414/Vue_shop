@@ -95,6 +95,7 @@
           <el-tab-pane name="3" label="商品图片">
               <!--
                 action:表示图片要上传到的后台API地址
+                on-preview: 点击文件列表中已上传的文件时的钩子
               -->
             <el-upload
               :action="uploadUrl"
