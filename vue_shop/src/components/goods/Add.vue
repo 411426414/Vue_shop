@@ -175,6 +175,9 @@ export default {
           return this.$message.error('获取动态参数列表失败！')
         }
         console.log(res.data)
+        res.data.forEach(item => {
+          item.attr_vals = item.attr_vals.length === 0 ? [] : item.attr_vals.split(' ')
+        })
         this.manyTableData = res.data
       }
     }
