@@ -102,6 +102,7 @@
               :action="uploadUrl"
               :on-preview="handlePreview"
               :on-remove="handleRemove"
+              :on-success="handleSuccess"
               list-type="picture"
               :headers="headerObj"
             >
@@ -127,7 +128,9 @@ export default {
         goods_weight: 0,
         goods_number: 0,
         // 商品所属的分类数组
-        goods_cat: []
+        goods_cat: [],
+        // 图片数组
+        pics: []
       },
       addFormRules: {
         goods_name: [
@@ -229,7 +232,11 @@ export default {
     // 处理图片预览效果
     handlePreview() {},
     // 处理移除图片的操作
-    handleRemove() {}
+    handleRemove() {},
+    // 监听图片上传成功的事件
+    handleSuccess(response) {
+      console.log(response)
+    }
   },
   computed: {
     cateId() {
