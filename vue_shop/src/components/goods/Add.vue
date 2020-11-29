@@ -103,6 +103,7 @@
               :on-preview="handlePreview"
               :on-remove="handleRemove"
               list-type="picture"
+              :headers="headerObj"
             >
               <el-button size="small" type="primary">点击上传</el-button>
             </el-upload>
@@ -157,7 +158,11 @@ export default {
       // 静态列表数据
       onlyTableData: [],
       // 上传图片的URL地址
-      uploadUrl: 'http://127.0.0.1:8888/api/private/v1/upload'
+      uploadUrl: 'http://127.0.0.1:8888/api/private/v1/upload',
+      // 图片上传组件的headers请求头对象
+      headerObj: {
+        Authorization: window.sessionStorage.getItem('token')
+      }
     }
   },
   created() {
