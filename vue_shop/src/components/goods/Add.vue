@@ -238,6 +238,9 @@ export default {
       console.log(response)
       // 1.拼接得到一个图片信息对象
       const picInfo = { pic: response.data.tmp_path }
+      // 2.将图片信息对象push到pics数组中
+      this.addForm.pics.push(picInfo)
+      console.log(this.addForm)
     }
   },
   computed: {
