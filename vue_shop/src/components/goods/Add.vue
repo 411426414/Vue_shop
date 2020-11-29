@@ -244,6 +244,8 @@ export default {
       const filePath = file.response.data.tmp_path
       // 2.从pics数组中，找到这个图片对应的索引值
       const i = this.addForm.pics.findIndex(x => x.pic === filePath)
+      // 3.调用数组的splice方法，把图片信息对象，从pics数组中移除
+      this.addForm.pics.splice(i, 1)
     },
     // 监听图片上传成功的事件
     handleSuccess(response) {
