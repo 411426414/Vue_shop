@@ -72,14 +72,19 @@
             </el-form-item>
           </el-tab-pane>
           <el-tab-pane name="1" label="商品参数">
-          <!-- 渲染表单的item项 -->
+            <!-- 渲染表单的item项 -->
             <el-form-item
               :label="item.attr_name"
               v-for="item in manyTableData"
               :key="item.attr_name"
             >
               <el-checkbox-group v-model="item.attr_vals">
-                <el-checkbox border :label="cb" v-for="(cb, i) in item.attr_vals" :key="i"></el-checkbox>
+                <el-checkbox
+                  border
+                  :label="cb"
+                  v-for="(cb, i) in item.attr_vals"
+                  :key="i"
+                ></el-checkbox>
               </el-checkbox-group>
             </el-form-item>
           </el-tab-pane>
@@ -89,11 +94,11 @@
               v-for="item in onlyTableData"
               :key="item.attr_id"
             >
-            <el-input v-model="item.attr_vals"></el-input>
+              <el-input v-model="item.attr_vals"></el-input>
             </el-form-item>
           </el-tab-pane>
           <el-tab-pane name="3" label="商品图片">
-              <!--
+            <!--
                 action:表示图片要上传到的后台API地址
                 on-preview: 点击文件列表中已上传的文件时的钩子
                 on-remove：文件列表移除文件时的钩子
@@ -256,7 +261,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  .el-checkbox{
+  .el-checkbox {
     margin: 0 5px 0 0 !important;
   }
 </style>
