@@ -242,6 +242,8 @@ export default {
       console.log(file)
       // 1.获取将要删除的图片的临时路径
       const filePath = file.response.data.tmp_path
+      // 2.从pics数组中，找到这个图片对应的索引值
+      const i = this.addForm.pics.findIndex(x => x.pic === filePath)
     },
     // 监听图片上传成功的事件
     handleSuccess(response) {
