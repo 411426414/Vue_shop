@@ -232,7 +232,8 @@ export default {
     // 处理图片预览效果
     handlePreview() {},
     // 处理移除图片的操作
-    handleRemove() {},
+    handleRemove() {
+    },
     // 监听图片上传成功的事件
     handleSuccess(response) {
       console.log(response)
