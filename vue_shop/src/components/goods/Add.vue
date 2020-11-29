@@ -240,6 +240,8 @@ export default {
     handleRemove(file) {
       // 拿到被移除图片的信息
       console.log(file)
+      // 1.获取将要删除的图片的临时路径
+      const filePath = file.response.data.tmp_path
     },
     // 监听图片上传成功的事件
     handleSuccess(response) {
