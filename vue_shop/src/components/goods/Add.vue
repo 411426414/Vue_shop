@@ -210,9 +210,12 @@ export default {
 
       // 获取动态参数列表
       if (this.activeIndex === '1') {
-        const { data: res } = await this.$http.get(`categories/${this.cateId}/attributes`, {
-          params: { sel: 'many' }
-        })
+        const { data: res } = await this.$http.get(
+          `categories/${this.cateId}/attributes`,
+          {
+            params: { sel: 'many' }
+          }
+        )
         if (res.meta.status !== 200) {
           return this.$message.error('获取动态参数列表失败！')
         }
@@ -270,7 +273,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  .el-checkbox {
-    margin: 0 5px 0 0 !important;
-  }
+.el-checkbox {
+  margin: 0 5px 0 0 !important;
+}
 </style>
