@@ -227,9 +227,12 @@ export default {
       }
       // 获取商品属性
       if (this.activeIndex === '2') {
-        const { data: res } = await this.$http.get(`categories/${this.cateId}/attributes`, {
-          params: { sel: 'only' }
-        })
+        const { data: res } = await this.$http.get(
+          `categories/${this.cateId}/attributes`,
+          {
+            params: { sel: 'only' }
+          }
+        )
         if (res.meta.status !== 200) {
           return this.$message.error('获取静态参数列表失败！')
         }
