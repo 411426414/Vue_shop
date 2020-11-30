@@ -249,7 +249,9 @@ export default {
     // 处理图片预览效果
     handlePreview(file) {
       // 获取被预览图片的信息
-      console.log(file)
+      // console.log(file)
+      // 得到完整的URL路径
+      this.previewPath = file.response.data.url
     },
     // 处理移除图片的操作
     handleRemove(file) {
