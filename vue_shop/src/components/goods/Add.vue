@@ -252,6 +252,8 @@ export default {
       // console.log(file)
       // 得到完整的URL路径
       this.previewPath = file.response.data.url
+      // 显示Dialog对话框
+      this.previewVisible = true
     },
     // 处理移除图片的操作
     handleRemove(file) {
