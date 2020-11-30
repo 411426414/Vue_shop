@@ -119,7 +119,7 @@
       </el-form>
     </el-card>
     <!-- 图片预览 -->
-    <el-dialog title="图片预览" width="50%">
+    <el-dialog title="图片预览" :visible.sync="previewVisible" width="50%">
     </el-dialog>
   </div>
 </template>
@@ -173,7 +173,9 @@ export default {
       // 图片上传组件的headers请求头对象
       headerObj: {
         Authorization: window.sessionStorage.getItem('token')
-      }
+      },
+      previewVisible: false
+    }
   },
   created() {
     this.getCateList()
