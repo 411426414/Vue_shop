@@ -114,7 +114,13 @@
               <el-button size="small" type="primary">点击上传</el-button>
             </el-upload>
           </el-tab-pane>
-          <el-tab-pane name="4" label="商品内容">商品内容</el-tab-pane>
+          <el-tab-pane name="4" label="商品内容">
+            <!-- 富文本编辑器组件 -->
+            <quill-editor
+              v-model="addForm.goods_introduce"
+            >
+            </quill-editor>
+          </el-tab-pane>
         </el-tabs>
       </el-form>
     </el-card>
