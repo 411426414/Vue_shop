@@ -120,6 +120,7 @@
     </el-card>
     <!-- 图片预览 -->
     <el-dialog title="图片预览" :visible.sync="previewVisible" width="50%">
+      <img :src="previewPath" alt="" class="previewImg" />
     </el-dialog>
   </div>
 </template>
@@ -174,6 +175,7 @@ export default {
       headerObj: {
         Authorization: window.sessionStorage.getItem('token')
       },
+      previewPath: '',
       previewVisible: false
     }
   },
