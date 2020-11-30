@@ -192,11 +192,11 @@ export default {
       this.$message.success('获取商品分类数据列表成功！')
       // 把数据列表赋值给catelist
       this.cateList = res.data
-      console.log(this.cateList)
+      // console.log(this.cateList)
     },
     // 级联选择器选中项变化，会触发这个函数
     handleChange() {
-      console.log(this.addForm.goods_cat)
+      // console.log(this.addForm.goods_cat)
       if (this.addForm.goods_cat.length !== 3) {
         this.addForm.goods_cat = []
       }
@@ -225,7 +225,7 @@ export default {
         if (res.meta.status !== 200) {
           return this.$message.error('获取动态参数列表失败！')
         }
-        console.log(res.data)
+        // console.log(res.data)
         res.data.forEach(item => {
           item.attr_vals = item.attr_vals.length === 0 ? [] : item.attr_vals.split(' ')
         })
@@ -265,16 +265,16 @@ export default {
       const i = this.addForm.pics.findIndex(x => x.pic === filePath)
       // 3.调用数组的splice方法，把图片信息对象，从pics数组中移除
       this.addForm.pics.splice(i, 1)
-      console.log(this.addForm)
+      // console.log(this.addForm)
     },
     // 监听图片上传成功的事件
     handleSuccess(response) {
-      console.log(response)
+      // console.log(response)
       // 1.拼接得到一个图片信息对象
       const picInfo = { pic: response.data.tmp_path }
       // 2.将图片信息对象push到pics数组中
       this.addForm.pics.push(picInfo)
-      console.log(this.addForm)
+      // console.log(this.addForm)
     }
   },
   computed: {
