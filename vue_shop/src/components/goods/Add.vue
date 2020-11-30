@@ -247,7 +247,10 @@ export default {
       }
     },
     // 处理图片预览效果
-    handlePreview() {},
+    handlePreview(file) {
+      // 获取被预览图片的信息
+      console.log(file)
+    },
     // 处理移除图片的操作
     handleRemove(file) {
       // 拿到被移除图片的信息
