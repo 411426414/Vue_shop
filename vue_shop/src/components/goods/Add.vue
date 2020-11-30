@@ -118,6 +118,9 @@
         </el-tabs>
       </el-form>
     </el-card>
+    <!-- 图片预览 -->
+    <el-dialog title="图片预览" width="50%">
+    </el-dialog>
   </div>
 </template>
 
@@ -171,7 +174,6 @@ export default {
       headerObj: {
         Authorization: window.sessionStorage.getItem('token')
       }
-    }
   },
   created() {
     this.getCateList()
