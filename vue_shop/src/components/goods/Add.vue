@@ -258,7 +258,7 @@ export default {
     // 处理移除图片的操作
     handleRemove(file) {
       // 拿到被移除图片的信息
-      console.log(file)
+      // console.log(file)
       // 1.获取将要删除的图片的临时路径
       const filePath = file.response.data.tmp_path
       // 2.从pics数组中，找到这个图片对应的索引值
