@@ -120,6 +120,8 @@
               v-model="addForm.goods_introduce"
             >
             </quill-editor>
+            <!-- 添加商品按钮 -->
+            <el-button type="primary">添加商品</el-button>
           </el-tab-pane>
         </el-tabs>
       </el-form>
