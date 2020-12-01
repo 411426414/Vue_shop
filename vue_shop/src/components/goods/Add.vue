@@ -147,7 +147,9 @@ export default {
         // 商品所属的分类数组
         goods_cat: [],
         // 图片数组
-        pics: []
+        pics: [],
+        // 商品详情描述
+        goods_introduce: ''
       },
       addFormRules: {
         goods_name: [
