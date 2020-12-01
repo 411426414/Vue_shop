@@ -121,7 +121,7 @@
             >
             </quill-editor>
             <!-- 添加商品按钮 -->
-            <el-button type="primary" @click="add">添加商品</el-button>
+            <el-button type="primary" class="btnAdd" @click="add">添加商品</el-button>
           </el-tab-pane>
         </el-tabs>
       </el-form>
@@ -305,5 +305,8 @@ export default {
 <style lang="less" scoped>
 .el-checkbox {
   margin: 0 5px 0 0 !important;
+}
+.btnAdd {
+  margin-top: 15px;
 }
 </style>
