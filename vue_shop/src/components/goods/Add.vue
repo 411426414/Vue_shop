@@ -121,7 +121,7 @@
             >
             </quill-editor>
             <!-- 添加商品按钮 -->
-            <el-button type="primary">添加商品</el-button>
+            <el-button type="primary" @click="add">添加商品</el-button>
           </el-tab-pane>
         </el-tabs>
       </el-form>
@@ -285,6 +285,10 @@ export default {
       // 2.将图片信息对象push到pics数组中
       this.addForm.pics.push(picInfo)
       // console.log(this.addForm)
+    },
+    // 添加商品
+    add() {
+      console.log(this.addForm)
     }
   },
   computed: {
