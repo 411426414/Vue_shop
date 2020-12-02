@@ -294,7 +294,9 @@ export default {
           return this.$message.error('请填写必要的表单项！')
         }
         // 执行添加的业务逻辑
-        this.addForm.goods_cat = this.addForm.goods_cat.join(',')
+        // lodash库 cloneDeep(obj)：深拷贝
+        const form = _.cloneDeep(this.addForm)
+        form.goods_cat = form.goods_cat.join(',')
       })
     }
   },
