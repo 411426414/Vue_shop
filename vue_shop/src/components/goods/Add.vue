@@ -150,7 +150,8 @@ export default {
         // 图片数组
         pics: [],
         // 商品详情描述
-        goods_introduce: ''
+        goods_introduce: '',
+        attrs: []
       },
       addFormRules: {
         goods_name: [
