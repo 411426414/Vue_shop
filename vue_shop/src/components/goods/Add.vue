@@ -314,6 +314,7 @@ export default {
           }
           this.addForm.attrs.push(newInfo)
         })
+        form.attrs = this.addForm.attrs
       })
     }
   },
