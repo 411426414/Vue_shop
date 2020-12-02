@@ -298,6 +298,13 @@ export default {
         // lodash库 cloneDeep(obj)：深拷贝
         const form = _.cloneDeep(this.addForm)
         form.goods_cat = form.goods_cat.join(',')
+        // 处理动态参数
+        this.manyTableData.forEach(item => {
+          const newInfo = {
+            attr_id: item.attr_id,
+            attr_value: item.attr_vals.join(' ')
+          }
+        })
       })
     }
   },
