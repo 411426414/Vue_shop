@@ -37,6 +37,12 @@
           width="105px"
         >
         </el-table-column>
+        <el-table-column
+          label="商品重量"
+          prop="goods_weight"
+          width="80px"
+        >
+        </el-table-column>
         <el-table-column label="商品价格(元)" prop="goods_price" width="105px"></el-table-column>
         <el-table-column label="商品重量" prop="goods_weight" width="80px"></el-table-column>
         <el-table-column label="创建时间" prop="add_time" width="160px">
