@@ -293,6 +293,8 @@ export default {
         if (!valid) {
           return this.$message.error('请填写必要的表单项！')
         }
+        // 执行添加的业务逻辑
+        this.addForm.goods_cat = this.addForm.goods_cat.join(',')
       })
     }
   },
