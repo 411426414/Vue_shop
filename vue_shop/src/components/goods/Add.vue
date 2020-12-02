@@ -304,6 +304,7 @@ export default {
             attr_id: item.attr_id,
             attr_value: item.attr_vals.join(' ')
           }
+          this.addForm.attrs.push(newInfo)
         })
       })
     }
