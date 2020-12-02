@@ -306,6 +306,14 @@ export default {
           }
           this.addForm.attrs.push(newInfo)
         })
+        // 处理静态属性
+        this.onlyTableData.forEach(item => {
+          const newInfo = {
+            attr_id: item.attr_id,
+            attr_value: item.attr_vals
+          }
+          this.addForm.attrs.push(newInfo)
+        })
       })
     }
   },
