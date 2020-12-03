@@ -67,7 +67,12 @@
             >
             </el-button>
             <!-- 分配角色 -->
-            <el-tooltip effect="dark" content="分配角色" placement="top" :enterable='false'>
+            <el-tooltip
+              effect="dark"
+              content="分配角色"
+              placement="top"
+              :enterable="false"
+            >
               <el-button type='warning' size='mini' icon='el-icon-setting' @click="setRole(scope.row)"></el-button>
             </el-tooltip>
           </template>
