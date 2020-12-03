@@ -351,10 +351,13 @@ export default {
         if (valid) return
         // console.log(valid)
         // 可以发起修改用户的网络请求
-        const { data: res } = await this.$http.put('users/' + this.editForm.id, {
-          email: this.editForm.email,
-          mobile: this.editForm.mobile
-        })
+        const { data: res } = await this.$http.put(
+          'users/' + this.editForm.id,
+          {
+            email: this.editForm.email,
+            mobile: this.editForm.mobile,
+          }
+        )
         if (res.meta.status !== 200) {
           return this.$message.error('更新用户信息失败！')
         }
