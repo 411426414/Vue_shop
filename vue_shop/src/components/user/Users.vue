@@ -143,7 +143,6 @@
         ref="editFormRef"
         label-width="70px"
       >
-      <el-form :model="editForm" :rules="editFormRules" ref="editFormRef" label-width="70px">
         <el-form-item label="用户名">
           <el-input v-model="editForm.username" disabled></el-input>
         </el-form-item>
@@ -355,7 +354,7 @@ export default {
           'users/' + this.editForm.id,
           {
             email: this.editForm.email,
-            mobile: this.editForm.mobile,
+            mobile: this.editForm.mobile
           }
         )
         if (res.meta.status !== 200) {
@@ -415,7 +414,7 @@ export default {
       const { data: res } = await this.$http.put(
         `users/${this.userInfo.id}/role`,
         {
-          rid: this.selectedRoled,
+          rid: this.selectedRoled
         }
       )
       if (res.meta.status !== 200) {
