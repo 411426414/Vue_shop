@@ -6,7 +6,7 @@
         <img src="../assets/heima.png" alt="" />
         <span>电商后台管理系统</span>
       </div>
-      <el-button type="info" @click='logout'>退出</el-button>
+      <el-button type="info" @click="logout">退出</el-button>
     </el-header>
     <!-- 页面主题区域 -->
     <el-container>
@@ -35,7 +35,7 @@
               <!-- 图标 -->
               <i :class="iconsObj[item.id]"></i>
               <!-- 文本 -->
-              <span>{{item.authName}}</span>
+              <span>{{ item.authName }}</span>
             </template>
 
             <!-- 二级菜单 -->
@@ -49,7 +49,7 @@
                 <!-- 图标 -->
                 <i class="el-icon-menu"></i>
                 <!-- 文本 -->
-                <span>{{subItem.authName}}</span>
+                <span>{{ subItem.authName }}</span>
               </template>
             </el-menu-item>
           </el-submenu>
