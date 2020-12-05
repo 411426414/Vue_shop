@@ -290,7 +290,7 @@ export default {
     },
     // 添加商品
     add() {
-      this.$refs.addFormRef.validate(valid => {
+      this.$refs.addFormRef.validate(async valid => {
         if (!valid) {
           return this.$message.error('请填写必要的表单项！')
         }
@@ -316,6 +316,15 @@ export default {
         })
         form.attrs = this.addForm.attrs
         console.log(form.attrs)
+
+        // 发起请求添加商品
+        // 商品的名称,必须是唯一的
+        const { data: res } = await this.$http.post('goods', form)
+        if (res.meta.status !== 200) {
+          return this.$message.error('添加商品失败!')
+        }
+        this.$message.success('添加商品成功')
+        this.$router.push('/goods')
       })
     }
   },
@@ -331,10 +340,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.el-checkbox {
-  margin: 0 5px 0 0 !important;
-}
-.btnAdd {
-  margin-top: 15px;
-}
+  .el-checkbox {
+    margin: 0 5px 0 0 !important;
+  }
+  .btnAdd {
+    margin-top: 15px;
+  }
 </style>
