@@ -28,6 +28,11 @@
             <el-tag type="danger" v-else>未付款</el-tag>
           </template>
         </el-table-column>
+        <el-table-column label="是否发货" prop="is_send">
+          <template slot-scope="scope">
+            {{ scope.row.is_send }}
+          </template>
+        </el-table-column>
       </el-table>
     </el-card>
   </div>
