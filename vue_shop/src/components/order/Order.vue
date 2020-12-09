@@ -28,7 +28,9 @@ export default {
         query: '',
         pagenum: 1,
         pagesize: 5
-      }
+      },
+      total: 0,
+      orderlist: []
     }
   },
   created() {
@@ -43,6 +45,8 @@ export default {
         return this.$message.error('获取订单列表失败')
       }
       this.$message.success('获取订单列表成功')
+      this.total = res.data.total
+      this.orderlist = res.data.goods
       console.log(res.data)
     }
   }
