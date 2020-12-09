@@ -20,7 +20,7 @@ import router from './router'
 Vue.use(VueQuillEditor)
 
 // 配置请求的根路径
-axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
+axios.defaults.baseURL = 'http://timemeetyou.com:8889/api/private/v1/'
 // 添加axios的axios.interceptors 拦截器，拦截请求前和请求后
 axios.interceptors.request.use(config => {
   config.headers.Authorization = window.sessionStorage.getItem('token') // console.log(config)
