@@ -31,6 +31,9 @@ export default {
       }
     }
   },
+  created() {
+    this.getOrderList()
+  },
   methods: {
     async getOrderList() {
       const { data: res } = await this.$http.get('orders', {
