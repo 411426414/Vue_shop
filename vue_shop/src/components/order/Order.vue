@@ -30,6 +30,13 @@ export default {
         pagesize: 5
       }
     }
+  },
+  methods: {
+    async getOrderList() {
+      const { data: res } = await this.$http.get('orders', {
+        params: this.queryInfo
+      })
+    }
   }
 }
 </script>
