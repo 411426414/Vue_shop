@@ -21,7 +21,17 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      queryInfo: {
+        query: '',
+        pagenum: 1,
+        pagesize: 5
+      }
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>
