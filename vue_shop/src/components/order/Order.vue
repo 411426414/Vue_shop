@@ -33,6 +33,11 @@
             {{ scope.row.is_send }}
           </template>
         </el-table-column>
+        <el-table-column label="下单时间" prop="create_time">
+          <template slot-scope="scope">
+            {{ scope.row.create_time | dateFormat }}
+          </template>
+        </el-table-column>
       </el-table>
     </el-card>
   </div>
