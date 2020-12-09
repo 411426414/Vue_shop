@@ -20,6 +20,7 @@
       <!-- 订单列表数据 -->
       <el-table :data="orderlist" border stripe>
         <el-table-column type="index"></el-table-column>
+        <el-table-column label="订单编号" prop="order_number"></el-table-column>
       </el-table>
     </el-card>
   </div>
