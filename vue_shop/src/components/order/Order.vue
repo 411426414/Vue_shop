@@ -46,6 +46,7 @@
               size="mini"
               type="primary"
               icon="el-icon-edit"
+              @click="showBox"
             ></el-button>
             <el-button
               size="mini"
@@ -67,6 +68,19 @@
       >
       </el-pagination>
     </el-card>
+
+    <!-- 修改地址的对话框 -->
+    <el-dialog
+      title="修改地址"
+      :visible.sync="addressVisible"
+      width="50%"
+    >
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="dialogVisible = false">确 定</el-button
+        >
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -81,6 +95,7 @@ export default {
       },
       total: 0,
       orderlist: [],
+      addressVisible: false,
     }
   },
   created() {
@@ -99,13 +114,17 @@ export default {
       this.orderlist = res.data.goods
       console.log(res.data)
     },
-    handleSizeChange(newSize){
+    handleSizeChange(newSize) {
       this.queryInfo.pagesize = newSize
       this.getOrderList()
     },
-    handleCurrentChange(newPage){
+    handleCurrentChange(newPage) {
       this.queryInfo.pagenum = newPage
       this.getOrderList()
+    },
+    // 展示修改地址的对话框
+    showBox() {
+      this.addressVisible = true
     }
   },
 }
