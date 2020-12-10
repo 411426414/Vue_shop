@@ -76,6 +76,7 @@
       width="50%"
     >
       <el-form
+        :model="addressForm"
         ref="addressFormRef"
         label-width="100px"
       >
@@ -110,6 +111,10 @@ export default {
       total: 0,
       orderlist: [],
       addressVisible: false,
+      addressForm: {
+        address1: [],
+        address2: '',
+      }
     }
   },
   created() {
