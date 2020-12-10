@@ -80,7 +80,10 @@
         label-width="100px"
       >
         <el-form-item label="省市区/县" prop="address1">
-          <el-input v-model="addressForm.address1"></el-input>
+          <el-cascader
+            :options="cityData"
+            v-model="addressForm.address1"
+          ></el-cascader>
         </el-form-item>
         <el-form-item label="详细地址" prop="address2">
           <el-input v-model="addressForm.address2"></el-input>
