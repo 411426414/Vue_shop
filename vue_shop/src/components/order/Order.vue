@@ -75,6 +75,17 @@
       :visible.sync="addressVisible"
       width="50%"
     >
+      <el-form
+        ref="addressFormRef"
+        label-width="100px"
+      >
+        <el-form-item label="省市区/县" prop="address1">
+          <el-input v-model="addressForm.address1"></el-input>
+        </el-form-item>
+        <el-form-item label="详细地址" prop="address2">
+          <el-input v-model="addressForm.address2"></el-input>
+        </el-form-item>
+      </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
         <el-button type="primary" @click="dialogVisible = false">确 定</el-button
