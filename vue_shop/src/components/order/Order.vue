@@ -59,6 +59,7 @@
       <!-- 分页组件 -->
       <el-pagination
         @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
       >
       </el-pagination>
     </el-card>
@@ -96,6 +97,10 @@ export default {
     },
     handleSizeChange(newSize){
       this.queryInfo.pagesize = newSize
+      this.getOrderList()
+    },
+    handleCurrentChange(newPage){
+      this.queryInfo.pagenum = newPage
       this.getOrderList()
     }
   },
