@@ -61,6 +61,7 @@
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
         :current-page="queryInfo.pagenum"
+        :page-sizes="[5, 10, 15, 20]"
       >
       </el-pagination>
     </el-card>
