@@ -74,6 +74,7 @@
       title="修改地址"
       :visible.sync="addressVisible"
       width="50%"
+      @close="addressDialogClosed"
     >
       <el-form
         :model="addressForm"
@@ -155,6 +156,9 @@ export default {
     // 展示修改地址的对话框
     showBox() {
       this.addressVisible = true
+    },
+    addressDialogClosed() {
+      this.$refs.addressFormRef.resetFields()
     }
   },
 }
