@@ -57,7 +57,9 @@
       </el-table>
 
       <!-- 分页组件 -->
-      <el-pagination>
+      <el-pagination
+        @size-change="handleSizeChange"
+      >
       </el-pagination>
     </el-card>
   </div>
@@ -91,6 +93,10 @@ export default {
       this.total = res.data.total
       this.orderlist = res.data.goods
       console.log(res.data)
+    },
+    handleSizeChange(newSize){
+      this.queryInfo.pagesize = newSize
+      this.getOrderList()
     }
   },
 }
