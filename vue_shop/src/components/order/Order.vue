@@ -77,6 +77,7 @@
     >
       <el-form
         :model="addressForm"
+        :rules="addressFormRules"
         ref="addressFormRef"
         label-width="100px"
       >
@@ -114,7 +115,15 @@ export default {
       addressForm: {
         address1: [],
         address2: '',
-      }
+      },
+      addressFormRules: {
+        address1: [
+          { required: true, message: '请选择省市区/县', trigger: 'blur' },
+        ],
+        address2: [
+          { required: true, message: '请填写详细地址', trigger: 'blur' },
+        ],
+      },
     }
   },
   created() {
