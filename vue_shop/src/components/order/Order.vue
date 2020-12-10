@@ -24,7 +24,9 @@
         <el-table-column label="订单价格" prop="order_price"></el-table-column>
         <el-table-column label="是否付款" prop="order_pay">
           <template slot-scope="scope">
-            <el-tag type="success" v-if="scope.row.order_pay === '1'">已付款</el-tag>
+            <el-tag type="success" v-if="scope.row.order_pay === '1'"
+              >已付款</el-tag
+            >
             <el-tag type="danger" v-else>未付款</el-tag>
           </template>
         </el-table-column>
@@ -40,11 +42,23 @@
         </el-table-column>
         <el-table-column label="操作">
           <template slot-scope="scope">
-            <el-button size="mini" type="primary" icon="el-icon-edit"></el-button>
-            <el-button size="mini" type="success" icon="el-icon-location"></el-button>
+            <el-button
+              size="mini"
+              type="primary"
+              icon="el-icon-edit"
+            ></el-button>
+            <el-button
+              size="mini"
+              type="success"
+              icon="el-icon-location"
+            ></el-button>
           </template>
         </el-table-column>
       </el-table>
+
+      <!-- 分页组件 -->
+      <el-pagination>
+      </el-pagination>
     </el-card>
   </div>
 </template>
@@ -56,10 +70,10 @@ export default {
       queryInfo: {
         query: '',
         pagenum: 1,
-        pagesize: 5
+        pagesize: 5,
       },
       total: 0,
-      orderlist: []
+      orderlist: [],
     }
   },
   created() {
@@ -68,7 +82,7 @@ export default {
   methods: {
     async getOrderList() {
       const { data: res } = await this.$http.get('orders', {
-        params: this.queryInfo
+        params: this.queryInfo,
       })
       if (res.meta.status !== 200) {
         return this.$message.error('获取订单列表失败')
@@ -78,7 +92,7 @@ export default {
       this.orderlist = res.data.goods
       console.log(res.data)
     }
-  }
+  },
 }
 </script>
 
