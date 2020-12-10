@@ -159,10 +159,13 @@ export default {
     },
     addressDialogClosed() {
       this.$refs.addressFormRef.resetFields()
-    }
+    },
   },
 }
 </script>
 
 <style lang="less" scoped>
+.el-cascader {
+  width: 100%;
+}
 </style>
