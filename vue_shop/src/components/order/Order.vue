@@ -101,6 +101,7 @@
 </template>
 
 <script>
+import cityData from './citydata'
 export default {
   data() {
     return {
@@ -124,6 +125,7 @@ export default {
           { required: true, message: '请填写详细地址', trigger: 'blur' },
         ],
       },
+      cityData: cityData,
     }
   },
   created() {
