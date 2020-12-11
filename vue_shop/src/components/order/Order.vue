@@ -168,6 +168,7 @@ export default {
       this.$refs.addressFormRef.resetFields()
     },
     async showProgressBox() {
+      const { data: res } = await this.$http.get('/kuaidi/804909574412544580')
       this.progressVisible = true
     },
   },
