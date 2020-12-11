@@ -133,7 +133,8 @@ export default {
         ],
       },
       cityData: cityData,
-      progressVisible: false
+      progressVisible: false,
+      progressInfo: [],
     }
   },
   created() {
@@ -172,6 +173,7 @@ export default {
       if (res.meta.status !== 200) {
         return this.$message.error('获取物流进度失败')
       }
+      this.progressInfo = res.data
       this.progressVisible = true
     },
   },
