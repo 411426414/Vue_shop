@@ -99,6 +99,11 @@
         >
       </span>
     </el-dialog>
+
+    <!-- 展示物流进度的对话框 -->
+    <el-dialog title="物流进度" :visible.sync="progressVisible" width="50%">
+      <span>这是一段信息</span>
+    </el-dialog>
   </div>
 </template>
 
