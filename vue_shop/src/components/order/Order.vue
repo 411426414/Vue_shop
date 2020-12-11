@@ -133,6 +133,7 @@ export default {
         ],
       },
       cityData: cityData,
+      progressVisible: false
     }
   },
   created() {
