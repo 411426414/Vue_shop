@@ -167,6 +167,9 @@ export default {
     addressDialogClosed() {
       this.$refs.addressFormRef.resetFields()
     },
+    async showProgressBox() {
+      this.progressVisible = true
+    },
   },
 }
 </script>
