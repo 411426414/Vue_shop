@@ -21,6 +21,8 @@ export default {
       }
   },
   created() {},
+  // 此时页面上的元素，已经渲染完毕
+  mounted() {},
   methods: {
     name() {
       
