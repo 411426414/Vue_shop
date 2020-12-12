@@ -95,14 +95,24 @@
       </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="addressVisible = false">取 消</el-button>
-        <el-button type="primary" @click="addressVisible = false">确 定</el-button
+        <el-button type="primary" @click="addressVisible = false"
+          >确 定</el-button
         >
       </span>
     </el-dialog>
 
     <!-- 展示物流进度的对话框 -->
     <el-dialog title="物流进度" :visible.sync="progressVisible" width="50%">
-      <span>这是一段信息</span>
+      <!-- Timeline 时间线 -->
+      <el-timeline>
+        <el-timeline-item
+          v-for="(activity, index) in progressInfo"
+          :key="index"
+          :timestamp="activity.time"
+        >
+          {{ activity.context }}
+        </el-timeline-item>
+      </el-timeline>
     </el-dialog>
   </div>
 </template>
