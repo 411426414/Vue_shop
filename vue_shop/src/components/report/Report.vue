@@ -25,7 +25,11 @@ export default {
   },
   created() {},
   // 此时页面上的元素，已经渲染完毕
-  mounted() {},
+  mounted() {
+    // 3. 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'))
+    
+  },
   methods: {
     name() {
       
