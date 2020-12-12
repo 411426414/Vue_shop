@@ -7,22 +7,20 @@
       <el-breadcrumb-item>数据报表</el-breadcrumb-item>
     </el-breadcrumb>
     <!-- 卡片视图区域 -->
-    <el-card class="box-card">
-      123456
-    </el-card>
+    <el-card></el-card>
   </div>
 </template>
 
 <script>
+// 1. 导入echarts
+var echarts = require('echarts');
 export default {
   data() {
     return {
       key: value
-    }
+      }
   },
-  created () {
-    
-  },
+  created() {},
   methods: {
     name() {
       
