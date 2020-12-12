@@ -19,9 +19,7 @@
 var echarts = require('echarts');
 export default {
   data() {
-    return {
-      key: value
-      }
+    return {}
   },
   created() {},
   // 此时页面上的元素，已经渲染完毕
@@ -49,6 +47,8 @@ export default {
         },
       ],
     }
+    // 5. 展示数据
+    myChart.setOption(option)
   },
   methods: {
     name() {
