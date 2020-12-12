@@ -34,7 +34,7 @@ const router = new VueRouter({
         { path: '/goods', component: GoodsList },
         { path: '/goods/add', component: Add },
         { path: '/orders', component: Orders },
-        { path: '/report', component: Report }
+        { path: '/reports', component: Report }
       ]
     }
   ]
