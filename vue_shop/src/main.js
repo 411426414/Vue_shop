@@ -31,6 +31,11 @@ axios.interceptors.request.use(config => {
   config.headers.Authorization = window.sessionStorage.getItem('token') // console.log(config)
   return config // 在最后必须 return config
 })
+// 在 response 拦截器中，隐藏进度条 nprogress.done()
+axios.interceptors.response.use(config =>{
+  nprogress.done();
+  return config
+})
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
