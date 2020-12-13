@@ -20,7 +20,39 @@ var echarts = require('echarts')
 var _ = require('lodash')
 export default {
   data() {
-    return {}
+    return {
+      // 需要合并的数据
+      options: {
+        title: {
+          text: '用户来源',
+        },
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'cross',
+            label: {
+              backgroundColor: '#E9EEF3',
+            },
+          },
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true,
+        },
+        xAxis: [
+          {
+            boundaryGap: false,
+          },
+        ],
+        yAxis: [
+          {
+            type: 'value',
+          },
+        ],
+      },
+    }
   },
   created() {},
   // 此时页面上的元素，已经渲染完毕
@@ -37,6 +69,7 @@ export default {
     // 5. 展示数据
     myChart.setOption(result)
   },
+  methods: {},
 }
 </script>
 
