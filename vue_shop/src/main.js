@@ -1,4 +1,7 @@
 import axios from 'axios'
+// 导入nprogress包对应的JS和CSS
+import nprogress from 'nprogress'
+import 'nprogress/nprogress.css'
 // require styles 导入富文本编辑器对应的样式
 import 'quill/dist/quill.bubble.css'
 import 'quill/dist/quill.core.css'
