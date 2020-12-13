@@ -35,7 +35,7 @@ export default {
     // 4. 准备数据和配置项
     const result = _.merge(res.data, this.options)
     // 5. 展示数据
-    myChart.setOption(res.data)
+    myChart.setOption(result)
   },
 }
 </script>
