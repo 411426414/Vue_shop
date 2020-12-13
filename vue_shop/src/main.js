@@ -25,7 +25,9 @@ Vue.use(VueQuillEditor)
 // 配置请求的根路径
 axios.defaults.baseURL = 'http://timemeetyou.com:8889/api/private/v1/'
 // 添加axios的axios.interceptors 拦截器，拦截请求前和请求后
+// 在 request 拦截器中，展示进度条 nprogress.start();
 axios.interceptors.request.use(config => {
+  nprogress.start();
   config.headers.Authorization = window.sessionStorage.getItem('token') // console.log(config)
   return config // 在最后必须 return config
 })
