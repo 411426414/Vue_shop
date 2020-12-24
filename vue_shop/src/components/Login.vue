@@ -68,7 +68,8 @@ export default {
       // console.log(this);
       this.$refs.loginFormRef.resetFields()
     },
-    login () {
+    // 登录按钮
+    login() {
       this.$refs.loginFormRef.validate(async valid => {
         // 如果valid为true发起请求，否则阻止请求
         if (!valid) return
