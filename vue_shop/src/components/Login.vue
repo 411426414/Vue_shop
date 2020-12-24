@@ -63,7 +63,8 @@ export default {
     }
   },
   methods: {
-    resetLoginForm () {
+    // 重置按钮函数
+    resetLoginForm() {
       // console.log(this);
       this.$refs.loginFormRef.resetFields()
     },
